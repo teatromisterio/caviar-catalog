@@ -75,7 +75,7 @@ main{padding:var(--s1) var(--s2) calc(var(--s1)*1.5);max-width:1600px;margin:0 a
 .col-card{position:relative;display:block;border-radius:var(--radius);overflow:hidden;background:var(--black);color:var(--white);aspect-ratio:3/4;isolation:isolate}
 .col-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .col-card:hover img{transform:scale(1.045)}
-.col-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,23,0) 45%,rgba(13,17,23,.88) 100%);z-index:1}
+.col-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,23,0) 38%,rgba(13,17,23,.55) 62%,rgba(13,17,23,.92) 100%);z-index:1}
 .col-card .cap{position:absolute;left:0;right:0;bottom:0;padding:var(--s3);z-index:2}
 .col-card .code{font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:800}
 .col-card h3{font-size:24px;line-height:1.1;font-weight:800;text-transform:uppercase;margin:6px 0 4px}
@@ -162,6 +162,60 @@ main{padding:var(--s1) var(--s2) calc(var(--s1)*1.5);max-width:1600px;margin:0 a
 
 footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line)}
 
+/* ---------- паки ---------- */
+.tile .pk{position:absolute;top:58px;right:10px;width:40px;height:40px;border-radius:50%;background:rgba(13,17,23,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:var(--white);transition:transform .2s,background .2s;z-index:2}
+.tile .pk:hover{transform:scale(1.08);background:rgba(13,17,23,.75)}
+.pk svg,.ib.pk svg{width:20px;height:20px}
+.pk.on{color:var(--gold)}
+.pdots{position:absolute;left:10px;bottom:10px;display:flex;gap:5px;z-index:2;pointer-events:none}
+.pdots i{width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(255,255,255,.85);box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.col-card .new{position:absolute;top:var(--s4);left:var(--s4);z-index:2;background:var(--gold);color:var(--black);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:4px 9px;border-radius:3px}
+.nav .cnt{min-width:20px;height:20px;border-radius:10px;background:rgba(255,255,255,.14);color:var(--white);font-size:11px;line-height:20px;text-align:center;padding:0 6px;font-weight:800;letter-spacing:0;margin-left:6px;display:inline-block}
+.nav .cnt:empty{display:none}
+
+.pop-bg{position:fixed;inset:0;z-index:140;display:none}
+.pop-bg.open{display:block}
+.pop{position:fixed;z-index:150;width:320px;background:var(--white);color:var(--text);border-radius:6px;box-shadow:0 18px 50px rgba(13,17,23,.28),0 2px 8px rgba(13,17,23,.12);padding:16px;display:none}
+.pop.open{display:block}
+.pop h4{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.pop .pm{font-weight:800;font-size:16px;line-height:20px;margin-bottom:12px}
+.pop .pm span{color:var(--gold-on-light);font-size:12px;letter-spacing:.08em;margin-left:6px}
+.prow{display:flex;align-items:center;gap:12px;width:100%;padding:11px 10px;border-radius:4px;text-align:left;border:1px solid var(--line);margin-bottom:8px;transition:border-color .2s,background .2s}
+.prow:hover{border-color:var(--gold-on-light)}
+.prow.on{background:#f6f3ec;border-color:var(--gold)}
+.prow .dot{width:12px;height:12px;border-radius:50%;flex:none}
+.prow .t{flex:1;min-width:0}
+.prow .t b{display:block;font-size:15px;line-height:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prow .t small{font-size:12px;color:var(--muted)}
+.prow .ck{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;color:var(--white)}
+.prow.on .ck{background:var(--gold);border-color:var(--gold)}
+.prow .ck svg{width:14px;height:14px;opacity:0}
+.prow.on .ck svg{opacity:1}
+.pnew{display:flex;gap:8px;margin-top:4px}
+.pnew input,.pslot input,.ren input{flex:1;min-width:0;height:40px;border:1px solid var(--line);border-radius:4px;padding:0 12px;font:inherit;font-size:14px;color:var(--text);background:var(--white)}
+.pnew input:focus,.pslot input:focus,.ren input:focus{outline:none;border-color:var(--gold-on-light)}
+.pnew .btn{height:40px;padding:0 14px;font-size:12px;letter-spacing:.1em}
+.pop .note{font-size:13px;line-height:18px;color:var(--muted);margin-top:4px}
+.pop .lnk{display:inline-block;margin-top:12px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-on-light)}
+.pop .lnk:hover{text-decoration:underline}
+
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.pslot{background:var(--white);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-height:360px}
+.pslot .bar{height:6px}
+.pslot .bd{padding:var(--s3);display:flex;flex-direction:column;gap:14px;flex:1}
+.pslot .slot{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.pslot h3{font-size:26px;line-height:1.1;font-weight:800;text-transform:uppercase;word-break:break-word}
+.pslot .n{color:var(--muted);font-size:14px}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.thumbs img,.thumbs span{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:3px;background:#ece9e3}
+.pslot .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.pslot .acts .btn{height:40px;padding:0 14px;font-size:12px;letter-spacing:.1em}
+.pslot.empty-slot{border-style:dashed;justify-content:center;background:transparent}
+.pslot.empty-slot .bd{justify-content:center}
+.pslot.empty-slot p{color:var(--muted);font-size:15px}
+.ren{display:flex;gap:8px}
+.ren .btn{height:40px;padding:0 16px;font-size:12px}
+
 /* reveal */
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .js .rv.in{opacity:1;transform:none}
@@ -173,12 +227,19 @@ footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;t
   .c-hero{grid-template-columns:1fr}
   .c-hero .img{min-height:0;aspect-ratio:4/5;order:-1}
   .nav .lbl{display:none}
+  .packs{grid-template-columns:1fr}
+  .pslot{min-height:0}
 }
 @media (max-width:600px){
   :root{--s1:40px;--s2:16px;--s3:16px;--header:60px}
   body{font-size:16px}
   .logo small{display:none}
-  .nav a,.nav button{padding:8px 9px;font-size:12px;letter-spacing:.08em}
+  .hdr{gap:8px}
+  .logo{letter-spacing:.2em;font-size:13px}
+  .nav{gap:0}
+  .nav a,.nav button{padding:8px 7px;font-size:11px;letter-spacing:.06em}
+  .nav .fav-btn{gap:4px}
+  .nav .cnt{margin-left:0}
   .cols{grid-template-columns:1fr 1fr;gap:12px}
   .col-card .cap{padding:14px}
   .col-card h3{font-size:16px}
@@ -187,12 +248,18 @@ footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;t
   .tile .info{flex-direction:column;gap:6px}
   .tile .nm{font-size:14px;line-height:18px}
   .tile .heart{width:36px;height:36px;top:8px;right:8px}
+  .tile .pk{width:36px;height:36px;top:50px;right:8px}
+  .pdots{left:8px;bottom:8px}
+  .pop{left:0!important;right:0;bottom:0;top:auto!important;width:auto;border-radius:12px 12px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom))}
+  .pop-bg.open{background:rgba(13,17,23,.45)}
+  .nav .pk-lbl{display:none}
   .lb-nav{display:none}
   .lb-title .nm{font-size:16px}
   .search{min-width:0;width:100%}
   .btn{height:44px;padding:0 18px}
   .xl{display:none}
 }
+@media (max-width:380px){.nav a[data-nav="home"]{display:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
 </style>
 <noscript><style>.js .rv{opacity:1;transform:none}</style></noscript>
@@ -204,6 +271,10 @@ footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;t
   <nav class="nav" aria-label="Основное меню">
     <a href="#/" data-nav="home">Коллекции</a>
     <a href="#/all" data-nav="all"><span class="lbl">Все&nbsp;</span>модели</a>
+    <a href="#/packs" data-nav="packs" class="fav-btn" aria-label="Мои паки">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></svg>
+      <span class="pk-lbl">Паки</span><span class="cnt" id="packCount"></span>
+    </a>
     <a href="#/favorites" data-nav="fav" class="fav-btn" aria-label="Избранное">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" stroke-linejoin="round"/></svg>
       <span class="cnt" id="favCount"></span>
@@ -221,6 +292,7 @@ footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;t
     <div class="lb-title"><div class="id" id="lbId"></div><div class="nm" id="lbName"></div><div class="cl" id="lbCol"></div></div>
     <div class="lb-acts">
       <button class="ib" id="lbCopy" title="Скопировать ID"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+      <button class="ib pk" id="lbPack" title="Добавить в пак"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></svg></button>
       <button class="ib heart" id="lbHeart" title="В избранное"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" stroke-linejoin="round"/></svg></button>
       <button class="ib" id="lbClose" title="Закрыть (Esc)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
@@ -232,6 +304,9 @@ footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;t
   </div>
   <div class="lb-bot" id="lbBot"></div>
 </div>
+
+<div class="pop-bg" id="popBg"></div>
+<div class="pop" id="pop" role="dialog" aria-label="Добавить в пак"></div>
 
 <div class="toast" id="toast" role="status"></div>
 
@@ -248,7 +323,7 @@ const COLLECTIONS = [
    models:['Изумрудный михраб','Четыре лепестка','Шеврон','Полярная звезда','Медовые соты','Жемчужный медальон','Звезда-компас','Филигранная розетка','Шахматная лента','Плетёный овал','Розовая роза','Лавровый венок','Серебряная лилия','Морская раковина','Золотой букет','Цветок-барельеф','Платиновый цветок','Барокко','Розовое барокко','Жемчужная рама','Арабеска','Узорный щит','Серебряная гравюра','Тиснёный орнамент']},
   {slug:'garden', code:'SAD', title:'Сад эмалей', folder:'woman',
    desc:'Перегородчатая эмаль, перламутр и тонкий металлический узор. Птицы, цветы и знаки неба в мягкой палитре — коллекция, созданная для неё.',
-   models:['Рыбы. Созвездие','Близнецы в пудре','Малахитовый Телец','Изумрудная капля','Мандала','Арлекин','Цветущая ветвь','Жемчужная волна','Луна и сердце','Розовое кружево','Колибри','Гортензия','Ласточки','Сакура']},
+   models:['Рыбы. Созвездие','Близнецы в пудре','Малахитовый Телец','Изумрудная капля','Мандала','Арлекин','Цветущая ветвь','Жемчужная волна','Луна и сердце','Розовое кружево','Колибри','Гортензия','Ласточки','Сакура','Белая лилия']},
   {slug:'waves', code:'VOL', title:'Волны зодиака', folder:'zodiac 1',
    desc:'Двенадцать знаков на волнах перламутровой эмали. Металлическая решётка повторяет движение воды, знак выложен жемчужной россыпью.',
    models:['Водолей. Лаванда','Стрелец. Бирюза','Близнецы. Перламутр','Рак. Лазурь','Телец. Мята','Овен. Коралл','Весы. Роза','Рыбы. Аквамарин','Дева. Пудра','Козерог. Серебро','Скорпион. Аметист','Лев. Янтарь']},
@@ -266,13 +341,32 @@ const COLLECTIONS = [
    models:['Рубин','Янтарь','Сапфир','Платина','Бирюза','Малахит','Индиго','Аметист','Графит','Гранат','Оливин','Цитрин']},
   {slug:'solo', code:'SOL', title:'Вне серий', folder:'другое',
    desc:'Самостоятельные работы: кованый карбон, механика турбийона, золото и кожа. Модели, которые не вошли в серии и не нуждаются в них.',
-   models:['Скорпион. Бордо','Роза Скорпиона','Телец в крокодиле','Изумрудный Телец','Рыбы и жемчуг','Механика','Безель','Кованый карбон']}
+   models:['Скорпион. Бордо','Роза Скорпиона','Телец в крокодиле','Изумрудный Телец','Рыбы и жемчуг','Механика','Безель','Кованый карбон','Лев в белом крокодиле']},
+  /* ---- новые коллекции (папка New, разобрана 06.10.2026) ---- */
+  {slug:'art-deco', code:'DEC', title:'Ар-деко', folder:'art deco', isNew:true,
+   desc:'Веера, лучи и ступенчатые арки эпохи джаза. Золото, оникс, малахит и перламутр, рубины в узлах орнамента — геометрия большого города в ладони.',
+   models:['Перламутровый веер','Чёрный гинкго','Золотые веера на чёрном','Малахитовые веера','Полночная лазурь','Розовая чешуя','Рубиновый павлин','Кардинал','Изумрудный джаз','Бордо и оникс','Рубиновый дождь','Малахитовая арка','Оникс и лучи','Белый рассвет','Чёрная жемчужина','Бродвей','Розовая арка','Розовый Гэтсби','Сапфировые веера','Гранатовые веера','Небоскрёб','Сапфировая чешуя','Золотая чешуя','Звёздная чешуя']},
+  {slug:'vitrage', code:'VIT', title:'Витраж', folder:'vitrage', isNew:true,
+   desc:'Готические розы, квадрифолии и геральдические лилии. Эмаль работает как цветное стекло собора, а золотой каркас — как его свинцовый переплёт.',
+   models:['Фисташковый витраж','Бургундский ромб','Лилии на ониксе','Сапфировый витраж','Ночная роза','Роза собора','Малая роза','Геральдическая лилия','Светлый витраж','Изумрудный сад','Янтарный квадрифолий']},
+  {slug:'tropics', code:'TRO', title:'Тропики', folder:'tropics', isNew:true,
+   desc:'Фламинго, монстеры и перья под золотой гравировкой. Мозаика из эмали и перламутра, листья, прорезанные в металле, — сад, который не отцветает.',
+   models:['Фламинго в ночи','Пара фламинго','Мозаика с фламинго','Перламутровые листья','Зелёный лист','Золотые листья','Бирюзовые джунгли','Перо с самоцветами','Перо на ониксе','Листья на чёрном','Мозаичный сад','Фламинго в перламутре']},
+  {slug:'geometry', code:'GEO', title:'Геометрия', folder:'geometry', isNew:true,
+   desc:'Звёзды, кубы, плетение и мраморная плитка. Чистый ритм формы: каррарский мрамор, лазурит, малахит и перламутр в строгой золотой сетке.',
+   models:['Белые звёзды','Звёзды на ониксе','Каррарский мрамор','Звёздный мрамор','Золотая плитка','Шахматный мрамор','Бриллиантовая сетка','Решётка на коже','Лазуритовая мозаика','Малахитовый клевер','Мрамор и малахит','Плетёная лента','Сапфировое плетение','Золотая плетёнка','Бордовое плетение','Перламутровая звезда','Золотые кубы','Кубы на перламутре','Снежная звезда']},
+  {slug:'gran-turismo', code:'GTR', title:'Гран-туризмо', folder:'gran turismo', isNew:true,
+   desc:'Полированная сталь, кожа крокодила, стёжка салона и карбон. Коллекция с характером спортивного купе — для тех, кто ценит инженерную точность.',
+   models:['Кремовая стёжка','Карбон и красный','Гравированный изгиб','Замша с прострочкой','Синий аллигатор','Крокодил и сетка','Бордовая стёжка','Чёрный крокодил','Ночной крокодил']}
 ];
+/* порядок коллекций на главной (ID от порядка не зависят) */
+const ORDER = ['gold','art-deco','vitrage','tropics','geometry','garden','gran-turismo','waves','cameo','stars','meteorite','dial','solo'];
 /* папки ассетов (латиница для GitHub Pages) */
-const ASSET_DIR = {'gold':'gold','woman':'woman','zodiac 1':'zodiac-1','zodiac 2':'zodiac-2','zodiac 3':'zodiac-3','zodiac black':'zodiac-black','zodiac man':'zodiac-man','другое':'other'};
+const ASSET_DIR = {'gold':'gold','woman':'woman','zodiac 1':'zodiac-1','zodiac 2':'zodiac-2','zodiac 3':'zodiac-3','zodiac black':'zodiac-black','zodiac man':'zodiac-man','другое':'other','art deco':'art-deco','vitrage':'vitrage','tropics':'tropics','geometry':'geometry','gran turismo':'gran-turismo'};
 
 const pad = n => String(n).padStart(2,'0');
 const MODELS = [];
+COLLECTIONS.sort((a,b)=>ORDER.indexOf(a.slug)-ORDER.indexOf(b.slug));
 COLLECTIONS.forEach(c => {
   c.dir = 'assets/' + ASSET_DIR[c.folder];
   c.cover = c.dir + '/cover.webp';
@@ -298,7 +392,86 @@ function toggleFav(id){
   document.querySelectorAll(`[data-heart="${id}"]`).forEach(b=>{b.classList.toggle('on',isFav(id)); b.setAttribute('aria-pressed',isFav(id))});
   if (route().view==='fav') render();
 }
+const rerenderIfPacks = () => { const v = route().view; if (v==='packs'||v==='pack') { const y=window.scrollY; render(); window.scrollTo(0,y); } };
 function updateFavCount(){ document.getElementById('favCount').textContent = favs.length || ''; }
+
+/* ---------- паки пользователя: не больше 3 одновременно (localStorage) ---------- */
+const PKEY = 'caviar-duo-packs', MAXP = 3;
+const PCOLORS = ['#A89974','#5F7FB0','#B06C83'];          /* золото, синий, вишня */
+let packs = [];
+try {
+  packs = (JSON.parse(localStorage.getItem(PKEY) || '[]') || []).slice(0,MAXP).map((p,i)=>({
+    id: String(p.id || ('p'+Date.now()+i)), name: String(p.name || 'Пак').slice(0,40),
+    c: Number.isInteger(p.c) ? p.c : i, items: (p.items||[]).filter(id=>BY_ID[id]) }));
+} catch(e) { packs = []; }
+const savePacks = () => { try { localStorage.setItem(PKEY, JSON.stringify(packs)); } catch(e) {} updatePackCount(); };
+function updatePackCount(){ document.getElementById('packCount').textContent = packs.length ? `${packs.length}/${MAXP}` : ''; }
+const packById = id => packs.find(p=>p.id===id);
+const packsOf = mid => packs.filter(p=>p.items.includes(mid));
+const pcolor = p => PCOLORS[p.c % PCOLORS.length];
+function createPack(name){
+  if (packs.length >= MAXP) { toast(`Можно вести не больше ${MAXP} паков одновременно`); return null; }
+  const used = packs.map(p=>p.c), c = [0,1,2].find(i=>!used.includes(i)) ?? 0;
+  name = (name||'').trim().slice(0,40) || `Пак ${c+1}`;
+  const p = {id:'p'+Date.now().toString(36), name, c, items:[]};
+  packs.push(p); savePacks(); return p;
+}
+function togglePack(pid, mid){
+  const p = packById(pid); if (!p) return;
+  const m = BY_ID[mid];
+  if (p.items.includes(mid)) { p.items = p.items.filter(x=>x!==mid); toast(`${m.id} убрана из пака «${p.name}»`); }
+  else { p.items.push(mid); toast(`${m.id} · «${m.name}» → пак «${p.name}»`); }
+  savePacks(); markModel(mid); packDirty = true; if (!popMid && !lb.classList.contains('open')) flushPacks();
+}
+function deletePack(pid){ const p=packById(pid); if(!p) return; if(!confirmDel(p)) return; packs = packs.filter(x=>x.id!==pid); savePacks(); toast(`Пак «${p.name}» удалён`); }
+function confirmDel(p){ return !p.items.length || window.confirm(`Удалить пак «${p.name}» (${p.items.length} мод.)?`); }
+function markModel(mid){
+  const ps = packsOf(mid);
+  document.querySelectorAll(`[data-pk="${mid}"]`).forEach(b=>{ b.classList.toggle('on', ps.length>0); b.title = ps.length ? 'В паках: '+ps.map(p=>p.name).join(', ') : 'Добавить в пак'; });
+  document.querySelectorAll(`[data-pdots="${mid}"]`).forEach(s=>{ s.innerHTML = ps.map(p=>`<i style="background:${pcolor(p)}" title="${esc(p.name)}"></i>`).join(''); });
+  if (popMid===mid) drawPop();
+}
+const packText = p => `Пак «${p.name}» — ${plural(p.items.length,'модель','модели','моделей')}\n` + p.items.map(id=>line(BY_ID[id])).join('\n');
+
+/* поповер выбора пака */
+const pop = document.getElementById('pop'), popBg = document.getElementById('popBg');
+let popMid = null, popAnchor = null, packDirty = false;
+function flushPacks(){ if (packDirty){ packDirty = false; rerenderIfPacks(); } }
+const CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+function openPop(mid, anchor){ popY = window.scrollY; popMid = mid; popAnchor = anchor; drawPop(); pop.classList.add('open'); popBg.classList.add('open'); placePop(); const f = pop.querySelector('.prow, input'); if (f) f.focus({preventScroll:true}); }
+function closePop(){ if (popMid===null) return; popMid = null; pop.classList.remove('open'); popBg.classList.remove('open'); if (popAnchor && document.body.contains(popAnchor)) popAnchor.focus({preventScroll:true}); popAnchor = null; if (!lb.classList.contains('open')) flushPacks(); }
+function placePop(){
+  if (window.innerWidth <= 600 || !popAnchor) return;
+  const r = popAnchor.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
+  let left = Math.min(Math.max(12, r.right - w), window.innerWidth - w - 12);
+  let top = r.bottom + 8; if (top + h > window.innerHeight - 12) top = Math.max(12, r.top - h - 8);
+  pop.style.left = left+'px'; pop.style.top = top+'px';
+}
+function drawPop(){
+  const m = BY_ID[popMid]; if (!m) return;
+  pop.innerHTML = `<h4>Добавить в пак</h4><div class="pm">${esc(m.name)}<span>${m.id}</span></div>
+    ${packs.map(p=>{ const on = p.items.includes(m.id); return `<button class="prow ${on?'on':''}" data-ptoggle="${p.id}" aria-pressed="${on}">
+      <span class="dot" style="background:${pcolor(p)}"></span><span class="t"><b>${esc(p.name)}</b><small>${plural(p.items.length,'модель','модели','моделей')}</small></span><span class="ck">${CHECK}</span></button>`; }).join('')}
+    ${packs.length < MAXP
+      ? `<form class="pnew" id="pnew"><input id="pnewName" maxlength="40" placeholder="${packs.length?'Новый пак':'Название первого пака'}" aria-label="Название нового пака"><button class="btn btn-dark" type="submit">Создать</button></form>
+         <div class="note">Свободно ${MAXP-packs.length} из ${MAXP} слотов. Модель сразу попадёт в новый пак.</div>`
+      : `<div class="note">Все ${MAXP} слота заняты. Чтобы начать новый пак, удалите один из текущих.</div>`}
+    <a class="lnk" href="#/packs">Мои паки →</a>`;
+  placePop();
+}
+pop.addEventListener('click', e=>{
+  const t = e.target.closest('[data-ptoggle]'); if (t){ togglePack(t.dataset.ptoggle, popMid); return; }
+  if (e.target.closest('.lnk')) closePop();
+});
+pop.addEventListener('submit', e=>{
+  e.preventDefault(); const mid = popMid;
+  const p = createPack(document.getElementById('pnewName').value);
+  if (p) { togglePack(p.id, mid); drawPop(); }
+});
+popBg.addEventListener('click', closePop);
+window.addEventListener('resize', ()=>{ if (popMid) placePop(); });
+let popY = 0;
+window.addEventListener('scroll', ()=>{ if (popMid && window.innerWidth > 600){ if (Math.abs(window.scrollY-popY) > 120) closePop(); else placePop(); } }, {passive:true});
 
 /* ---------- утилиты ---------- */
 const $app = document.getElementById('app');
@@ -312,6 +485,7 @@ async function copyText(t){
 }
 const line = m => `${m.id} — ${m.name} — коллекция «${m.col.title}», модель №${m.num}`;
 const HEART = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" stroke-linejoin="round"/></svg>';
+const PKICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></svg>';
 const ARROW = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
 /* ---------- роутинг (hash — работает на GitHub Pages) ---------- */
@@ -320,6 +494,8 @@ function route(){
   if (h[0]==='c' && COLLECTIONS.find(c=>c.slug===h[1])) return {view:'col', slug:h[1]};
   if (h[0]==='all') return {view:'all', filter:h[1]||''};
   if (h[0]==='favorites') return {view:'fav'};
+  if (h[0]==='packs') return {view:'packs'};
+  if (h[0]==='pack' && packById(decodeURIComponent(h[1]||''))) return {view:'pack', id:decodeURIComponent(h[1])};
   return {view:'home'};
 }
 let currentList = [];
@@ -328,8 +504,10 @@ function tile(m, showCol){
   return `<article class="tile rv">
     <button class="ph" data-open="${m.id}" aria-label="Открыть ${esc(m.name)} на весь экран">
       <img data-src="${m.thumb}" alt="${esc(m.name)} — коллекция «${esc(m.col.title)}», ${m.id}" loading="lazy" decoding="async">
+      <span class="pdots" data-pdots="${m.id}">${packsOf(m.id).map(p=>`<i style="background:${pcolor(p)}"></i>`).join('')}</span>
     </button>
     <button class="heart ${isFav(m.id)?'on':''}" data-heart="${m.id}" aria-pressed="${isFav(m.id)}" aria-label="В избранное">${HEART}</button>
+    ${(()=>{const ps=packsOf(m.id);return `<button class="pk ${ps.length?'on':''}" data-pk="${m.id}" aria-label="Добавить в пак" title="${ps.length?'В паках: '+esc(ps.map(p=>p.name).join(', ')):'Добавить в пак'}">${PKICON}</button>`})()}
     <div class="info">
       <div><div class="nm">${esc(m.name)}</div>${showCol?`<div class="cl"><a href="#/c/${m.col.slug}">${esc(m.col.title)}</a></div>`:''}</div>
       <button class="idtag" data-copy="${m.id}" title="Скопировать ID">${m.id}</button>
@@ -341,13 +519,14 @@ function viewHome(){
   return `<section class="hero">
     <div class="eyebrow">Caviar · iPhone Duo</div>
     <h1>Коллекции концептов</h1>
-    <p>Выберите коллекцию, чтобы рассмотреть модели. Отмечайте понравившиеся сердечком — они соберутся в избранном вместе с идентификаторами, которые удобно скопировать и отправить.</p>
+    <p>Выберите коллекцию, чтобы рассмотреть модели. Сердечко отправляет модель в избранное, а кнопка-стопка — в один из ваших паков: собирайте до трёх подборок одновременно и копируйте их идентификаторы одним нажатием.</p>
     <div class="meta">
       <div class="stat"><b>${COLLECTIONS.length}</b><span>коллекций</span></div>
       <div class="stat"><b>${MODELS.length}</b><span>моделей</span></div>
     </div>
     <div class="actions">
       <a class="btn btn-gold" href="#/all">Смотреть все модели ${ARROW}</a>
+      <a class="btn btn-ghost" href="#/packs">Мои паки</a>
       <a class="btn btn-ghost" href="#/favorites">Избранное</a>
     </div>
   </section>
@@ -356,6 +535,7 @@ function viewHome(){
     <div class="cols">
       ${COLLECTIONS.map(c=>`<a class="col-card rv" href="#/c/${c.slug}" aria-label="Коллекция ${esc(c.title)}">
         <img src="${c.cover}" alt="Обложка коллекции «${esc(c.title)}»" loading="lazy" decoding="async">
+        ${c.isNew?'<span class="new">Новая</span>':''}
         <div class="cap"><div class="code">${c.code}</div><h3>${esc(c.title)}</h3><div class="n">${plural(c.items.length,'модель','модели','моделей')}</div>
         <span class="go">Открыть коллекцию ${ARROW}</span></div>
       </a>`).join('')}
@@ -423,15 +603,62 @@ function viewFav(){
   </main>`;
 }
 
+function viewPacks(){
+  currentList = [];
+  const slots = [0,1,2].map(i=>packs[i]);
+  return `<main>
+    <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>Мои паки</span></div>
+    <div class="sec-head"><div><h2>Мои паки</h2><div class="sub">Собирайте из моделей свои коллекции — до ${MAXP} паков одновременно. Модель добавляется кнопкой-стопкой на карточке или в полноэкранном просмотре и может входить в несколько паков. Паки хранятся в этом браузере.</div></div></div>
+    <div class="packs">${slots.map((p,i)=> p ? `<section class="pslot rv">
+        <div class="bar" style="background:${pcolor(p)}"></div>
+        <div class="bd">
+          <div class="slot">Пак ${i+1} из ${MAXP}</div>
+          <h3>${esc(p.name)}</h3>
+          <div class="n">${plural(p.items.length,'модель','модели','моделей')}</div>
+          <div class="thumbs">${[0,1,2,3].map(k=>p.items[k]?`<img src="${BY_ID[p.items[k]].thumb}" alt="${esc(BY_ID[p.items[k]].name)}" loading="lazy">`:'<span></span>').join('')}</div>
+          <div class="acts">
+            <a class="btn btn-dark" href="#/pack/${encodeURIComponent(p.id)}">Открыть</a>
+            <button class="btn btn-line" data-pcopy="${p.id}" ${p.items.length?'':'disabled'}>Скопировать ID</button>
+            <button class="btn btn-line" data-pdel="${p.id}">Удалить</button>
+          </div>
+        </div></section>`
+      : `<section class="pslot empty-slot rv"><div class="bd">
+          <div class="slot">Слот ${i+1} из ${MAXP} · свободен</div>
+          <p>Дайте паку название — например, клиент, повод или настроение подборки.</p>
+          <form class="ren" data-pcreate><input maxlength="40" placeholder="Название пака" aria-label="Название пака"><button class="btn btn-dark" type="submit">Создать</button></form>
+        </div></section>`).join('')}
+    </div>
+  </main>`;
+}
+
+function viewPack(id){
+  const p = packById(id), list = p.items.map(x=>BY_ID[x]);
+  currentList = list;
+  return `<main>
+    <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><a href="#/packs">Мои паки</a><span>/</span><span>${esc(p.name)}</span></div>
+    <div class="sec-head"><div><div class="slot" style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:${pcolor(p)};margin-bottom:8px">● Пак ${packs.indexOf(p)+1} из ${MAXP}</div><h2>${esc(p.name)}</h2><div class="sub">${plural(list.length,'модель','модели','моделей')}</div></div></div>
+    <div class="fav-panel">
+      ${list.length ? `<pre>${esc(packText(p))}</pre>` : `<pre>Пак пока пуст. Добавляйте модели кнопкой-стопкой на карточках.</pre>`}
+      <div class="btns" style="flex-direction:column;align-items:stretch">
+        <button class="btn btn-gold" data-pcopy="${p.id}" ${list.length?'':'disabled'}>Скопировать<span class="xl">&nbsp;идентификаторы</span></button>
+        <button class="btn btn-line" data-pcopyids="${p.id}" ${list.length?'':'disabled'}>Только ID</button>
+        <form class="ren" data-prename="${p.id}"><input maxlength="40" value="${esc(p.name)}" aria-label="Переименовать пак"><button class="btn btn-line" type="submit">ОК</button></form>
+        <div style="display:flex;gap:8px"><button class="btn btn-line" style="flex:1" data-pclear="${p.id}" ${list.length?'':'disabled'}>Очистить</button><button class="btn btn-line" style="flex:1" data-pdel="${p.id}">Удалить</button></div>
+      </div>
+    </div>
+    ${list.length ? `<div class="grid">${list.map(m=>tile(m,true)).join('')}</div>` : `<div class="empty"><a class="btn btn-dark" href="#/all">Смотреть все модели</a></div>`}
+  </main>`;
+}
+
 /* ---------- рендер ---------- */
 let io;
 function render(){
   const r = route();
   document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',
-    (r.view==='home'&&a.dataset.nav==='home')||(r.view==='col'&&a.dataset.nav==='home')||(r.view==='all'&&a.dataset.nav==='all')||(r.view==='fav'&&a.dataset.nav==='fav')));
-  $app.innerHTML = r.view==='col' ? viewCol(r.slug) : r.view==='all' ? viewAll(r.filter) : r.view==='fav' ? viewFav() : viewHome();
+    (r.view==='home'&&a.dataset.nav==='home')||(r.view==='col'&&a.dataset.nav==='home')||(r.view==='all'&&a.dataset.nav==='all')||(r.view==='fav'&&a.dataset.nav==='fav')||((r.view==='packs'||r.view==='pack')&&a.dataset.nav==='packs')));
+  $app.innerHTML = r.view==='col' ? viewCol(r.slug) : r.view==='all' ? viewAll(r.filter) : r.view==='fav' ? viewFav() : r.view==='packs' ? viewPacks() : r.view==='pack' ? viewPack(r.id) : viewHome();
   const c = r.view==='col' ? COLLECTIONS.find(x=>x.slug===r.slug) : null;
-  document.title = c ? `${c.title} — каталог iPhone Duo` : r.view==='all' ? 'Все модели — каталог iPhone Duo' : r.view==='fav' ? 'Избранное — каталог iPhone Duo' : 'Каталог коллекций iPhone Duo';
+  document.title = c ? `${c.title} — каталог iPhone Duo` : r.view==='all' ? 'Все модели — каталог iPhone Duo' : r.view==='fav' ? 'Избранное — каталог iPhone Duo' : r.view==='packs' ? 'Мои паки — каталог iPhone Duo' : r.view==='pack' ? `Пак «${packById(r.id).name}» — каталог iPhone Duo` : 'Каталог коллекций iPhone Duo';
   hydrate();
   if (r.view==='all') bindSearch();
 }
@@ -459,10 +686,21 @@ function bindSearch(){
 document.addEventListener('click', async e=>{
   const h = e.target.closest('[data-heart]'); if (h){ e.preventDefault(); toggleFav(h.dataset.heart); return; }
   const cp = e.target.closest('[data-copy]'); if (cp){ e.preventDefault(); const m=BY_ID[cp.dataset.copy]; if(await copyText(line(m))) toast(`Скопировано: ${m.id}`); return; }
+  const pk = e.target.closest('[data-pk]'); if (pk){ e.preventDefault(); e.stopPropagation(); popMid===pk.dataset.pk ? closePop() : openPop(pk.dataset.pk, pk); return; }
   const o = e.target.closest('[data-open]'); if (o){ openLb(o.dataset.open); return; }
+  const pc = e.target.closest('[data-pcopy]'); if (pc){ const p=packById(pc.dataset.pcopy); if(p&&p.items.length&&await copyText(packText(p))) toast(`Пак «${p.name}» скопирован`); return; }
+  const pci = e.target.closest('[data-pcopyids]'); if (pci){ const p=packById(pci.dataset.pcopyids); if(p&&await copyText(p.items.join(', '))) toast('ID скопированы'); return; }
+  const pd = e.target.closest('[data-pdel]'); if (pd){ const id=pd.dataset.pdel; deletePack(id); if(!packById(id)){ if(route().view==='pack') location.hash='#/packs'; else rerenderIfPacks(); } return; }
+  const pcl = e.target.closest('[data-pclear]'); if (pcl){ const p=packById(pcl.dataset.pclear); if(p&&window.confirm(`Очистить пак «${p.name}»?`)){ const ids=p.items.slice(); p.items=[]; savePacks(); ids.forEach(markModel); rerenderIfPacks(); toast('Пак очищен'); } return; }
   if (e.target.id==='copyAll'||e.target.closest('#copyAll')){ const t=favs.map(id=>line(BY_ID[id])).join('\n'); if(await copyText(t)) toast(`Скопировано ${plural(favs.length,'строка','строки','строк')}`); }
   if (e.target.id==='copyIds'){ if(await copyText(favs.join(', '))) toast('ID скопированы'); }
   if (e.target.id==='clearFav'){ if (favs.length){ favs=[]; saveFavs(); render(); toast('Избранное очищено'); } }
+});
+
+document.addEventListener('submit', e=>{
+  const f = e.target;
+  if (f.matches('[data-pcreate]')){ e.preventDefault(); const p=createPack(f.querySelector('input').value); if(p){ toast(`Пак «${p.name}» создан`); rerenderIfPacks(); } }
+  if (f.matches('[data-prename]')){ e.preventDefault(); const p=packById(f.dataset.prename); const v=f.querySelector('input').value.trim().slice(0,40); if(p&&v){ p.name=v; savePacks(); p.items.forEach(markModel); rerenderIfPacks(); toast('Пак переименован'); } }
 });
 
 /* ---------- лайтбокс ---------- */
@@ -485,12 +723,13 @@ function showLb(){
   document.getElementById('lbCol').textContent = `Коллекция «${m.col.title}» · модель №${m.num}`;
   const hb = document.getElementById('lbHeart'); hb.dataset.heart = m.id; hb.classList.toggle('on',isFav(m.id)); hb.setAttribute('aria-pressed',isFav(m.id));
   document.getElementById('lbCopy').dataset.copy = m.id;
+  const pb = document.getElementById('lbPack'); pb.dataset.pk = m.id; pb.classList.toggle('on', packsOf(m.id).length>0);
   document.getElementById('lbBot').textContent = `${lbIdx+1} / ${currentList.length} · нажмите на изображение для увеличения`;
   const many = currentList.length>1;
   document.getElementById('lbPrev').style.visibility = many?'':'hidden';
   document.getElementById('lbNext').style.visibility = many?'':'hidden';
 }
-function closeLb(){ lb.classList.remove('open','zoom'); document.body.style.overflow=''; lbImg.removeAttribute('src'); if(lastFocus) lastFocus.focus(); }
+function closeLb(){ closePop(); setTimeout(flushPacks); lb.classList.remove('open','zoom'); document.body.style.overflow=''; lbImg.removeAttribute('src'); if(lastFocus) lastFocus.focus(); }
 const step = d => { lbIdx = (lbIdx + d + currentList.length) % currentList.length; showLb(); };
 document.getElementById('lbClose').onclick = closeLb;
 document.getElementById('lbPrev').onclick = ()=>step(-1);
@@ -501,7 +740,9 @@ lbImg.addEventListener('click', e=>{
 });
 lbSc.addEventListener('click', e=>{ if (e.target===lbSc && !lb.classList.contains('zoom')) closeLb(); });
 document.addEventListener('keydown', e=>{
+  if (popMid && e.key==='Escape'){ closePop(); return; }
   if (!lb.classList.contains('open')) return;
+  if (popMid) return;
   if (e.key==='Escape') { lb.classList.contains('zoom') ? lb.classList.remove('zoom') : closeLb(); }
   else if (e.key==='ArrowRight') step(1);
   else if (e.key==='ArrowLeft') step(-1);
@@ -511,8 +752,8 @@ let tx=null, ty=null;
 lbSc.addEventListener('touchstart', e=>{ if(lb.classList.contains('zoom')) return; tx=e.touches[0].clientX; ty=e.touches[0].clientY; },{passive:true});
 lbSc.addEventListener('touchend', e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty; if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)) step(dx<0?1:-1); tx=null; });
 
-window.addEventListener('hashchange', ()=>{ if(lb.classList.contains('open')) closeLb(); render(); window.scrollTo(0,0); });
-updateFavCount();
+window.addEventListener('hashchange', ()=>{ closePop(); if(lb.classList.contains('open')) closeLb(); render(); window.scrollTo(0,0); });
+updateFavCount(); updatePackCount();
 render();
 </script>
 </body>
