@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Каталог коллекций iPhone Duo</title>
+<meta name="description" content="Каталог концептов кастомного iPhone Duo: коллекции, модели, избранное.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --gold:#A89974; --gold-h:#968758; --gold-on-light:#85764F;
+  --light:#F7F7F7; --text:#393838; --black:#0D1117; --navy:#06224D;
+  --muted:#8a8784; --line:#e4e2de; --white:#fff;
+  --s1:64px; --s2:40px; --s3:24px; --s4:14px;
+  --radius:4px; --header:68px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--light);color:var(--text);font-size:17px;line-height:24px;-webkit-font-smoothing:antialiased;min-height:100vh}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- header ---------- */
+.hdr{position:sticky;top:0;z-index:50;height:var(--header);background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:space-between;padding:0 var(--s2);gap:var(--s3)}
+.logo{font-weight:800;letter-spacing:.32em;font-size:15px;text-transform:uppercase;display:flex;align-items:center;gap:14px;white-space:nowrap}
+.logo small{font-weight:400;letter-spacing:.14em;color:var(--gold);font-size:12px}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a,.nav button{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;border-radius:var(--radius);color:#cfcbc4;transition:color .2s}
+.nav a:hover,.nav a.on{color:var(--white)}
+.nav a.on{box-shadow:inset 0 -2px 0 var(--gold)}
+.fav-btn{position:relative;display:flex;align-items:center;gap:8px}
+.fav-btn svg{width:22px;height:22px}
+.fav-btn .cnt{min-width:20px;height:20px;border-radius:10px;background:var(--gold);color:var(--black);font-size:11px;line-height:20px;text-align:center;padding:0 6px;font-weight:800;letter-spacing:0}
+.fav-btn .cnt:empty{display:none}
+.fav-btn.on{color:var(--white)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--black);color:var(--white);padding:var(--s1) var(--s2) calc(var(--s1) + 8px)}
+.hero .eyebrow{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;margin-bottom:var(--s3)}
+.hero h1{font-weight:800;font-size:clamp(36px,6vw,76px);line-height:1;text-transform:uppercase;letter-spacing:.01em;max-width:14ch}
+.hero p{margin-top:var(--s3);max-width:640px;color:#bdb8b0}
+.hero .meta{display:flex;gap:var(--s2);margin-top:var(--s2);flex-wrap:wrap}
+.stat b{display:block;font-weight:800;font-size:clamp(40px,6vw,72px);line-height:1;color:var(--gold)}
+.stat span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#9d978d}
+.hero .actions{margin-top:var(--s2);display:flex;gap:var(--s4);flex-wrap:wrap}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 28px;border-radius:var(--radius);font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-h)}
+.btn-ghost{border:1px solid rgba(255,255,255,.28);color:var(--white)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-dark{background:var(--black);color:var(--white)}
+.btn-dark:hover{background:#222831}
+.btn-line{border:1px solid var(--line);color:var(--text);background:var(--white)}
+.btn-line:hover{border-color:var(--gold-on-light);color:var(--gold-on-light)}
+.btn svg{width:18px;height:18px}
+.btn{white-space:nowrap}
+
+/* ---------- sections ---------- */
+main{padding:var(--s1) var(--s2) calc(var(--s1)*1.5);max-width:1600px;margin:0 auto}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s2);flex-wrap:wrap}
+.sec-head h2{font-weight:700;font-size:clamp(32px,4.2vw,52px);line-height:1.02;text-transform:uppercase}
+.sec-head .sub{color:var(--muted);font-size:15px;margin-top:10px;max-width:750px}
+.crumbs{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s4);display:flex;gap:10px;flex-wrap:wrap}
+.crumbs a{color:var(--gold-on-light);font-weight:700}
+.crumbs a:hover{text-decoration:underline}
+
+/* ---------- collections grid ---------- */
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)}
+.col-card{position:relative;display:block;border-radius:var(--radius);overflow:hidden;background:var(--black);color:var(--white);aspect-ratio:3/4;isolation:isolate}
+.col-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.col-card:hover img{transform:scale(1.045)}
+.col-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,23,0) 45%,rgba(13,17,23,.88) 100%);z-index:1}
+.col-card .cap{position:absolute;left:0;right:0;bottom:0;padding:var(--s3);z-index:2}
+.col-card .code{font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:800}
+.col-card h3{font-size:24px;line-height:1.1;font-weight:800;text-transform:uppercase;margin:6px 0 4px}
+.col-card .n{font-size:14px;color:#cfcbc4}
+.col-card .go{margin-top:var(--s4);display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--white);border-bottom:1px solid var(--gold);padding-bottom:4px}
+.col-card:hover .go{color:var(--gold)}
+
+/* ---------- collection hero ---------- */
+.c-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);background:var(--black);color:var(--white);min-height:520px}
+.c-hero .txt{padding:var(--s1) var(--s2);display:flex;flex-direction:column;justify-content:center}
+.c-hero .code{color:var(--gold);font-weight:800;letter-spacing:.24em;font-size:13px}
+.c-hero h1{font-size:clamp(36px,5.2vw,72px);font-weight:800;line-height:1;text-transform:uppercase;margin:var(--s3) 0}
+.c-hero p{color:#bdb8b0;max-width:520px}
+.c-hero .actions{margin-top:var(--s2);display:flex;gap:var(--s4);flex-wrap:wrap}
+.c-hero .img{position:relative;overflow:hidden;min-height:420px}
+.c-hero .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ---------- toolbar ---------- */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--s3)}
+.chip{height:36px;padding:0 16px;border-radius:18px;border:1px solid var(--line);background:var(--white);font-size:13px;font-weight:700;color:var(--text);transition:all .2s}
+.chip:hover{border-color:var(--gold-on-light)}
+.chip.on{background:var(--black);border-color:var(--black);color:var(--white)}
+.chip .k{color:var(--muted);font-weight:600;margin-left:4px}
+.chip.on .k{color:var(--gold)}
+.search{height:36px;border:1px solid var(--line);border-radius:18px;padding:0 16px;font:inherit;font-size:14px;min-width:220px;background:var(--white);color:var(--text)}
+.search:focus{outline:none;border-color:var(--gold-on-light)}
+
+/* ---------- model tiles ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--s3) 20px}
+.tile{position:relative}
+.tile .ph{position:relative;display:block;width:100%;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;background:#3a3741;cursor:zoom-in}
+.tile .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .4s;opacity:0}
+.tile .ph img.ld{opacity:1}
+.tile .ph:hover img{transform:scale(1.04)}
+.tile .heart{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;background:rgba(13,17,23,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:var(--white);transition:transform .2s,background .2s;z-index:2}
+.tile .heart:hover{transform:scale(1.08);background:rgba(13,17,23,.75)}
+.heart svg{width:20px;height:20px}
+.heart.on{color:var(--gold)}
+.heart.on svg path{fill:currentColor}
+.tile .info{padding:12px 2px 0;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.tile .nm{font-weight:700;font-size:16px;line-height:20px}
+.tile .cl{font-size:13px;color:var(--muted);line-height:18px;margin-top:2px}
+.tile .cl a:hover{color:var(--gold-on-light)}
+.idtag{flex:none;font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--gold-on-light);border:1px solid #d9d2c1;border-radius:3px;padding:3px 7px;line-height:16px;cursor:copy;white-space:nowrap;background:var(--white)}
+.idtag:hover{border-color:var(--gold-on-light)}
+
+/* ---------- favorites ---------- */
+.fav-panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:var(--s3);margin-bottom:var(--s2);display:flex;gap:var(--s3);align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.fav-panel pre{font-family:inherit;font-size:14px;line-height:22px;white-space:pre-wrap;color:var(--text);max-height:220px;overflow:auto;flex:1 1 380px;min-width:0}
+.fav-panel .btns{display:flex;gap:10px;flex-wrap:wrap}
+.empty{text-align:center;padding:var(--s1) var(--s3);color:var(--muted)}
+.empty svg{width:48px;height:48px;color:var(--gold);margin:0 auto var(--s3)}
+.empty h3{color:var(--text);font-size:24px;font-weight:800;text-transform:uppercase;margin-bottom:10px}
+.empty .btn{margin-top:var(--s3)}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:100;background:#0B0B0D;display:none;flex-direction:column;color:var(--white)}
+.lb.open{display:flex}
+.lb-top{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:14px var(--s3);flex:none}
+.lb-title .id{color:var(--gold);font-weight:800;letter-spacing:.12em;font-size:13px}
+.lb-title .nm{font-weight:800;font-size:20px;line-height:1.2;text-transform:uppercase}
+.lb-title .cl{font-size:13px;color:#9d978d}
+.lb-acts{display:flex;gap:6px;align-items:center}
+.ib{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);transition:background .2s,color .2s}
+.ib:hover{background:rgba(255,255,255,.1)}
+.ib svg{width:22px;height:22px}
+.ib.heart.on{color:var(--gold)}
+.lb-stage{position:relative;flex:1;min-height:0;overflow:hidden;touch-action:pan-y}
+.lb-stage .sc{position:absolute;inset:0;overflow:auto;display:flex;align-items:center;justify-content:center;scrollbar-width:none}
+.lb-stage .sc::-webkit-scrollbar{display:none}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in;user-select:none;-webkit-user-drag:none}
+.lb.zoom .lb-stage .sc{display:block}
+.lb.zoom .lb-stage img{max-width:none;max-height:none;width:auto;height:auto;cursor:zoom-out;margin:0 auto}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--white);z-index:2}
+.lb-nav:hover{background:rgba(168,153,116,.35)}
+.lb-nav.p{left:var(--s3)} .lb-nav.n{right:var(--s3)}
+.lb-nav svg{width:24px;height:24px}
+.lb.zoom .lb-nav{display:none}
+.lb-bot{flex:none;text-align:center;padding:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7d786f}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--black);color:var(--white);padding:14px 22px;border-radius:var(--radius);font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:all .3s;z-index:200;border-left:3px solid var(--gold);max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:1200px){.cols{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:900px){
+  :root{--s1:48px;--s2:24px}
+  .cols{grid-template-columns:repeat(2,1fr)}
+  .c-hero{grid-template-columns:1fr}
+  .c-hero .img{min-height:0;aspect-ratio:4/5;order:-1}
+  .nav .lbl{display:none}
+}
+@media (max-width:600px){
+  :root{--s1:40px;--s2:16px;--s3:16px;--header:60px}
+  body{font-size:16px}
+  .logo small{display:none}
+  .nav a,.nav button{padding:8px 9px;font-size:12px;letter-spacing:.08em}
+  .cols{grid-template-columns:1fr 1fr;gap:12px}
+  .col-card .cap{padding:14px}
+  .col-card h3{font-size:16px}
+  .col-card .go{display:none}
+  .grid{grid-template-columns:1fr 1fr;gap:20px 12px}
+  .tile .info{flex-direction:column;gap:6px}
+  .tile .nm{font-size:14px;line-height:18px}
+  .tile .heart{width:36px;height:36px;top:8px;right:8px}
+  .lb-nav{display:none}
+  .lb-title .nm{font-size:16px}
+  .search{min-width:0;width:100%}
+  .btn{height:44px;padding:0 18px}
+  .xl{display:none}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
+</style>
+<noscript><style>.js .rv{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<header class="hdr">
+  <a class="logo" href="#/" aria-label="На главную">Caviar <small>iPhone Duo · Каталог</small></a>
+  <nav class="nav" aria-label="Основное меню">
+    <a href="#/" data-nav="home">Коллекции</a>
+    <a href="#/all" data-nav="all"><span class="lbl">Все&nbsp;</span>модели</a>
+    <a href="#/favorites" data-nav="fav" class="fav-btn" aria-label="Избранное">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" stroke-linejoin="round"/></svg>
+      <span class="cnt" id="favCount"></span>
+    </a>
+  </nav>
+</header>
+
+<div id="app" aria-live="polite"></div>
+
+<footer>Caviar · Концепты iPhone Duo · Внутренний каталог</footer>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр модели">
+  <div class="lb-top">
+    <div class="lb-title"><div class="id" id="lbId"></div><div class="nm" id="lbName"></div><div class="cl" id="lbCol"></div></div>
+    <div class="lb-acts">
+      <button class="ib" id="lbCopy" title="Скопировать ID"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+      <button class="ib heart" id="lbHeart" title="В избранное"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" stroke-linejoin="round"/></svg></button>
+      <button class="ib" id="lbClose" title="Закрыть (Esc)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+  </div>
+  <div class="lb-stage" id="lbStage">
+    <div class="sc" id="lbSc"><img id="lbImg" alt=""></div>
+    <button class="lb-nav p" id="lbPrev" aria-label="Предыдущая"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="lb-nav n" id="lbNext" aria-label="Следующая"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+  <div class="lb-bot" id="lbBot"></div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ============================================================
+   ДАННЫЕ КАТАЛОГА
+   Каждая коллекция = папка в assets/<slug>/ : cover.webp + 01.webp, 02.webp…
+   (превью: NN-t.webp). ID модели = <код коллекции>-<номер>.
+   Чтобы добавить модель: положите файлы в папку и допишите имя в models.
+   ============================================================ */
+const COLLECTIONS = [
+  {slug:'gold', code:'ZOL', title:'Сокровищница', folder:'gold',
+   desc:'Золото 24 карата, ручная гравировка и бриллиантовая россыпь. Барочный орнамент, эмаль и жемчуг — коллекция для тех, кто носит драгоценность каждый день.',
+   models:['Изумрудный михраб','Четыре лепестка','Шеврон','Полярная звезда','Медовые соты','Жемчужный медальон','Звезда-компас','Филигранная розетка','Шахматная лента','Плетёный овал','Розовая роза','Лавровый венок','Серебряная лилия','Морская раковина','Золотой букет','Цветок-барельеф','Платиновый цветок','Барокко','Розовое барокко','Жемчужная рама','Арабеска','Узорный щит','Серебряная гравюра','Тиснёный орнамент']},
+  {slug:'garden', code:'SAD', title:'Сад эмалей', folder:'woman',
+   desc:'Перегородчатая эмаль, перламутр и тонкий металлический узор. Птицы, цветы и знаки неба в мягкой палитре — коллекция, созданная для неё.',
+   models:['Рыбы. Созвездие','Близнецы в пудре','Малахитовый Телец','Изумрудная капля','Мандала','Арлекин','Цветущая ветвь','Жемчужная волна','Луна и сердце','Розовое кружево','Колибри','Гортензия','Ласточки','Сакура']},
+  {slug:'waves', code:'VOL', title:'Волны зодиака', folder:'zodiac 1',
+   desc:'Двенадцать знаков на волнах перламутровой эмали. Металлическая решётка повторяет движение воды, знак выложен жемчужной россыпью.',
+   models:['Водолей. Лаванда','Стрелец. Бирюза','Близнецы. Перламутр','Рак. Лазурь','Телец. Мята','Овен. Коралл','Весы. Роза','Рыбы. Аквамарин','Дева. Пудра','Козерог. Серебро','Скорпион. Аметист','Лев. Янтарь']},
+  {slug:'cameo', code:'KAM', title:'Камеи зодиака', folder:'zodiac 2',
+   desc:'Кожа крокодила пастельных оттенков и рельефная камея из перламутра в жемчужной оправе. Лучевая гравировка над камерами — как восход.',
+   models:['Камея Льва','Камея Девы','Камея Овна','Камея Близнецов','Камея Рака','Камея Водолея','Камея Весов','Камея Козерога','Камея Скорпиона','Камея Стрельца','Камея Рыб','Камея Тельца']},
+  {slug:'stars', code:'RES', title:'Звёздная решётка', folder:'zodiac 3',
+   desc:'Розовое золото, кружево из звёзд и знак зодиака в круглом медальоне. Тонкая работа ажура поверх цветной эмали.',
+   models:['Овен. Созвездие','Овен','Козерог','Рак','Рыбы','Весы','Дева','Близнецы','Телец','Скорпион','Стрелец','Лев','Водолей']},
+  {slug:'meteorite', code:'MET', title:'Чёрный метеорит', folder:'zodiac black',
+   desc:'Чёрный титан с PVD-покрытием, метеоритная вставка и астрономический циферблат. Каждое созвездие носит имя своей самой яркой звезды.',
+   models:['Альдебаран','Регул','Антарес','Вега','Сириус','Бетельгейзе','Арктур','Капелла','Спика','Поллукс','Денеб','Альтаир','Ригель','Фомальгаут']},
+  {slug:'dial', code:'CIF', title:'Небесный циферблат', folder:'zodiac man',
+   desc:'Гильошированный титан, метеорит и цветной циферблат со звёздной картой в обрамлении камней. Двенадцать оттенков — двенадцать характеров.',
+   models:['Рубин','Янтарь','Сапфир','Платина','Бирюза','Малахит','Индиго','Аметист','Графит','Гранат','Оливин','Цитрин']},
+  {slug:'solo', code:'SOL', title:'Вне серий', folder:'другое',
+   desc:'Самостоятельные работы: кованый карбон, механика турбийона, золото и кожа. Модели, которые не вошли в серии и не нуждаются в них.',
+   models:['Скорпион. Бордо','Роза Скорпиона','Телец в крокодиле','Изумрудный Телец','Рыбы и жемчуг','Механика','Безель','Кованый карбон']}
+];
+/* папки ассетов (латиница для GitHub Pages) */
+const ASSET_DIR = {'gold':'gold','woman':'woman','zodiac 1':'zodiac-1','zodiac 2':'zodiac-2','zodiac 3':'zodiac-3','zodiac black':'zodiac-black','zodiac man':'zodiac-man','другое':'other'};
+
+const pad = n => String(n).padStart(2,'0');
+const MODELS = [];
+COLLECTIONS.forEach(c => {
+  c.dir = 'assets/' + ASSET_DIR[c.folder];
+  c.cover = c.dir + '/cover.webp';
+  c.items = c.models.map((name,i) => {
+    const m = {id:`${c.code}-${pad(i+1)}`, name, num:i+1, col:c,
+      thumb:`${c.dir}/${pad(i+1)}-t.webp`, full:`${c.dir}/${pad(i+1)}.webp`};
+    MODELS.push(m); return m;
+  });
+});
+const BY_ID = Object.fromEntries(MODELS.map(m=>[m.id,m]));
+
+/* ---------- избранное (localStorage) ---------- */
+const FKEY = 'caviar-duo-favorites';
+let favs = [];
+try { favs = JSON.parse(localStorage.getItem(FKEY) || '[]').filter(id => BY_ID[id]); } catch(e) { favs = []; }
+const saveFavs = () => { try { localStorage.setItem(FKEY, JSON.stringify(favs)); } catch(e) {} updateFavCount(); };
+const isFav = id => favs.includes(id);
+function toggleFav(id){
+  const m = BY_ID[id];
+  if (isFav(id)) { favs = favs.filter(x=>x!==id); toast(`${m.id} убрана из избранного`); }
+  else { favs.push(id); toast(`${m.id} · «${m.name}» — в избранном`); }
+  saveFavs();
+  document.querySelectorAll(`[data-heart="${id}"]`).forEach(b=>{b.classList.toggle('on',isFav(id)); b.setAttribute('aria-pressed',isFav(id))});
+  if (route().view==='fav') render();
+}
+function updateFavCount(){ document.getElementById('favCount').textContent = favs.length || ''; }
+
+/* ---------- утилиты ---------- */
+const $app = document.getElementById('app');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const plural = (n,a,b,c) => { const m10=n%10, m100=n%100; return n+' '+(m10===1&&m100!==11?a:(m10>=2&&m10<=4&&(m100<10||m100>=20)?b:c)); };
+let toastT;
+function toast(t){ const el=document.getElementById('toast'); el.textContent=t; el.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('show'),2200); }
+async function copyText(t){
+  try { await navigator.clipboard.writeText(t); return true; }
+  catch(e){ const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); let ok=false; try{ok=document.execCommand('copy')}catch(_){} ta.remove(); return ok; }
+}
+const line = m => `${m.id} — ${m.name} — коллекция «${m.col.title}», модель №${m.num}`;
+const HEART = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" stroke-linejoin="round"/></svg>';
+const ARROW = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+/* ---------- роутинг (hash — работает на GitHub Pages) ---------- */
+function route(){
+  const h = location.hash.replace(/^#\/?/,'').split('/');
+  if (h[0]==='c' && COLLECTIONS.find(c=>c.slug===h[1])) return {view:'col', slug:h[1]};
+  if (h[0]==='all') return {view:'all', filter:h[1]||''};
+  if (h[0]==='favorites') return {view:'fav'};
+  return {view:'home'};
+}
+let currentList = [];
+
+function tile(m, showCol){
+  return `<article class="tile rv">
+    <button class="ph" data-open="${m.id}" aria-label="Открыть ${esc(m.name)} на весь экран">
+      <img data-src="${m.thumb}" alt="${esc(m.name)} — коллекция «${esc(m.col.title)}», ${m.id}" loading="lazy" decoding="async">
+    </button>
+    <button class="heart ${isFav(m.id)?'on':''}" data-heart="${m.id}" aria-pressed="${isFav(m.id)}" aria-label="В избранное">${HEART}</button>
+    <div class="info">
+      <div><div class="nm">${esc(m.name)}</div>${showCol?`<div class="cl"><a href="#/c/${m.col.slug}">${esc(m.col.title)}</a></div>`:''}</div>
+      <button class="idtag" data-copy="${m.id}" title="Скопировать ID">${m.id}</button>
+    </div>
+  </article>`;
+}
+
+function viewHome(){
+  return `<section class="hero">
+    <div class="eyebrow">Caviar · iPhone Duo</div>
+    <h1>Коллекции концептов</h1>
+    <p>Выберите коллекцию, чтобы рассмотреть модели. Отмечайте понравившиеся сердечком — они соберутся в избранном вместе с идентификаторами, которые удобно скопировать и отправить.</p>
+    <div class="meta">
+      <div class="stat"><b>${COLLECTIONS.length}</b><span>коллекций</span></div>
+      <div class="stat"><b>${MODELS.length}</b><span>моделей</span></div>
+    </div>
+    <div class="actions">
+      <a class="btn btn-gold" href="#/all">Смотреть все модели ${ARROW}</a>
+      <a class="btn btn-ghost" href="#/favorites">Избранное</a>
+    </div>
+  </section>
+  <main>
+    <div class="sec-head"><div><h2>Коллекции</h2><div class="sub">Нажмите на обложку, чтобы открыть каталог коллекции</div></div></div>
+    <div class="cols">
+      ${COLLECTIONS.map(c=>`<a class="col-card rv" href="#/c/${c.slug}" aria-label="Коллекция ${esc(c.title)}">
+        <img src="${c.cover}" alt="Обложка коллекции «${esc(c.title)}»" loading="lazy" decoding="async">
+        <div class="cap"><div class="code">${c.code}</div><h3>${esc(c.title)}</h3><div class="n">${plural(c.items.length,'модель','модели','моделей')}</div>
+        <span class="go">Открыть коллекцию ${ARROW}</span></div>
+      </a>`).join('')}
+    </div>
+  </main>`;
+}
+
+function viewCol(slug){
+  const c = COLLECTIONS.find(x=>x.slug===slug);
+  currentList = c.items;
+  const idx = COLLECTIONS.indexOf(c), next = COLLECTIONS[(idx+1)%COLLECTIONS.length];
+  return `<section class="c-hero">
+    <div class="txt">
+      <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>${esc(c.title)}</span></div>
+      <div class="code">Коллекция · ${c.code}</div>
+      <h1>${esc(c.title)}</h1>
+      <p>${esc(c.desc)}</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#/all">Посмотреть все модели ${ARROW}</a>
+        <a class="btn btn-ghost" href="#/c/${next.slug}">Далее: ${esc(next.title)}</a>
+      </div>
+    </div>
+    <div class="img"><img src="${c.cover}" alt="Обложка коллекции «${esc(c.title)}»"></div>
+  </section>
+  <main>
+    <div class="sec-head"><div><h2>Модели</h2><div class="sub">${plural(c.items.length,'модель','модели','моделей')} · ID ${c.code}-01 — ${c.code}-${pad(c.items.length)}</div></div>
+    <a class="btn btn-line" href="#/all/${c.slug}">Все модели каталога</a></div>
+    <div class="grid">${c.items.map(m=>tile(m,false)).join('')}</div>
+  </main>`;
+}
+
+function viewAll(filter){
+  const list = filter ? MODELS.filter(m=>m.col.slug===filter) : MODELS;
+  currentList = list;
+  return `<main>
+    <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>Все модели</span></div>
+    <div class="sec-head"><div><h2>Все модели</h2><div class="sub">Сплошной каталог: ${plural(MODELS.length,'модель','модели','моделей')} из ${COLLECTIONS.length} коллекций</div></div></div>
+    <div class="toolbar" role="toolbar" aria-label="Фильтр по коллекции">
+      <a class="chip ${!filter?'on':''}" href="#/all" style="display:inline-flex;align-items:center">Все<span class="k">${MODELS.length}</span></a>
+      ${COLLECTIONS.map(c=>`<a class="chip ${filter===c.slug?'on':''}" href="#/all/${c.slug}" style="display:inline-flex;align-items:center">${esc(c.title)}<span class="k">${c.items.length}</span></a>`).join('')}
+      <input class="search" id="q" type="search" placeholder="Поиск по названию или ID" aria-label="Поиск">
+    </div>
+    <div class="grid" id="allGrid">${list.map(m=>tile(m,true)).join('')}</div>
+  </main>`;
+}
+
+function viewFav(){
+  const list = favs.map(id=>BY_ID[id]);
+  currentList = list;
+  if (!list.length) return `<main><div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>Избранное</span></div>
+    <div class="empty">${HEART}<h3>Избранное пусто</h3><p>Нажмите на сердечко на карточке модели, и она появится здесь.</p>
+    <a class="btn btn-dark" href="#/all">Смотреть все модели</a></div></main>`;
+  return `<main>
+    <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>Избранное</span></div>
+    <div class="sec-head"><div><h2>Избранное</h2><div class="sub">${plural(list.length,'модель','модели','моделей')} · список сохраняется в этом браузере</div></div></div>
+    <div class="fav-panel">
+      <pre id="favText">${esc(list.map(line).join('\n'))}</pre>
+      <div class="btns">
+        <button class="btn btn-gold" id="copyAll"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Скопировать<span class="xl">&nbsp;идентификаторы</span></button>
+        <button class="btn btn-line" id="copyIds">Только ID</button>
+        <button class="btn btn-line" id="clearFav">Очистить</button>
+      </div>
+    </div>
+    <div class="grid">${list.map(m=>tile(m,true)).join('')}</div>
+  </main>`;
+}
+
+/* ---------- рендер ---------- */
+let io;
+function render(){
+  const r = route();
+  document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',
+    (r.view==='home'&&a.dataset.nav==='home')||(r.view==='col'&&a.dataset.nav==='home')||(r.view==='all'&&a.dataset.nav==='all')||(r.view==='fav'&&a.dataset.nav==='fav')));
+  $app.innerHTML = r.view==='col' ? viewCol(r.slug) : r.view==='all' ? viewAll(r.filter) : r.view==='fav' ? viewFav() : viewHome();
+  const c = r.view==='col' ? COLLECTIONS.find(x=>x.slug===r.slug) : null;
+  document.title = c ? `${c.title} — каталог iPhone Duo` : r.view==='all' ? 'Все модели — каталог iPhone Duo' : r.view==='fav' ? 'Избранное — каталог iPhone Duo' : 'Каталог коллекций iPhone Duo';
+  hydrate();
+  if (r.view==='all') bindSearch();
+}
+function hydrate(){
+  $app.querySelectorAll('img[data-src]').forEach(img=>{ img.onload=()=>img.classList.add('ld'); img.src=img.dataset.src; img.removeAttribute('data-src'); });
+  if (io) io.disconnect();
+  if ('IntersectionObserver' in window){
+    io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{rootMargin:'0px 0px -5% 0px'});
+    $app.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  } else $app.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+}
+function bindSearch(){
+  const q = document.getElementById('q'), grid = document.getElementById('allGrid');
+  const base = currentList.slice();
+  q.addEventListener('input',()=>{
+    const s = q.value.trim().toLowerCase();
+    const list = s ? base.filter(m=>(m.id+' '+m.name+' '+m.col.title).toLowerCase().includes(s)) : base;
+    currentList = list;
+    grid.innerHTML = list.length ? list.map(m=>tile(m,true)).join('') : '<div class="empty" style="grid-column:1/-1">Ничего не найдено</div>';
+    hydrate();
+  });
+}
+
+/* ---------- делегирование кликов ---------- */
+document.addEventListener('click', async e=>{
+  const h = e.target.closest('[data-heart]'); if (h){ e.preventDefault(); toggleFav(h.dataset.heart); return; }
+  const cp = e.target.closest('[data-copy]'); if (cp){ e.preventDefault(); const m=BY_ID[cp.dataset.copy]; if(await copyText(line(m))) toast(`Скопировано: ${m.id}`); return; }
+  const o = e.target.closest('[data-open]'); if (o){ openLb(o.dataset.open); return; }
+  if (e.target.id==='copyAll'||e.target.closest('#copyAll')){ const t=favs.map(id=>line(BY_ID[id])).join('\n'); if(await copyText(t)) toast(`Скопировано ${plural(favs.length,'строка','строки','строк')}`); }
+  if (e.target.id==='copyIds'){ if(await copyText(favs.join(', '))) toast('ID скопированы'); }
+  if (e.target.id==='clearFav'){ if (favs.length){ favs=[]; saveFavs(); render(); toast('Избранное очищено'); } }
+});
+
+/* ---------- лайтбокс ---------- */
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbSc = document.getElementById('lbSc');
+let lbIdx = 0, lastFocus = null;
+function openLb(id){
+  lbIdx = currentList.findIndex(m=>m.id===id); if (lbIdx<0){ currentList=[BY_ID[id]]; lbIdx=0; }
+  lastFocus = document.activeElement;
+  lb.classList.add('open'); document.body.style.overflow='hidden';
+  showLb(); document.getElementById('lbClose').focus();
+}
+function showLb(){
+  const m = currentList[lbIdx];
+  lb.classList.remove('zoom');
+  lbImg.src = m.thumb; // мгновенно — превью, затем полное изображение
+  const full = new Image(); full.onload = ()=>{ if(currentList[lbIdx]===m) lbImg.src = m.full; }; full.src = m.full;
+  lbImg.alt = `${m.name} — ${m.col.title}, ${m.id}`;
+  document.getElementById('lbId').textContent = m.id;
+  document.getElementById('lbName').textContent = m.name;
+  document.getElementById('lbCol').textContent = `Коллекция «${m.col.title}» · модель №${m.num}`;
+  const hb = document.getElementById('lbHeart'); hb.dataset.heart = m.id; hb.classList.toggle('on',isFav(m.id)); hb.setAttribute('aria-pressed',isFav(m.id));
+  document.getElementById('lbCopy').dataset.copy = m.id;
+  document.getElementById('lbBot').textContent = `${lbIdx+1} / ${currentList.length} · нажмите на изображение для увеличения`;
+  const many = currentList.length>1;
+  document.getElementById('lbPrev').style.visibility = many?'':'hidden';
+  document.getElementById('lbNext').style.visibility = many?'':'hidden';
+}
+function closeLb(){ lb.classList.remove('open','zoom'); document.body.style.overflow=''; lbImg.removeAttribute('src'); if(lastFocus) lastFocus.focus(); }
+const step = d => { lbIdx = (lbIdx + d + currentList.length) % currentList.length; showLb(); };
+document.getElementById('lbClose').onclick = closeLb;
+document.getElementById('lbPrev').onclick = ()=>step(-1);
+document.getElementById('lbNext').onclick = ()=>step(1);
+lbImg.addEventListener('click', e=>{
+  const zoomed = lb.classList.toggle('zoom');
+  if (zoomed){ const r = lbImg.getBoundingClientRect(); requestAnimationFrame(()=>{ const fx=(e.clientX-r.left)/r.width, fy=(e.clientY-r.top)/r.height; lbSc.scrollLeft = fx*lbSc.scrollWidth - lbSc.clientWidth/2; lbSc.scrollTop = fy*lbSc.scrollHeight - lbSc.clientHeight/2; }); }
+});
+lbSc.addEventListener('click', e=>{ if (e.target===lbSc && !lb.classList.contains('zoom')) closeLb(); });
+document.addEventListener('keydown', e=>{
+  if (!lb.classList.contains('open')) return;
+  if (e.key==='Escape') { lb.classList.contains('zoom') ? lb.classList.remove('zoom') : closeLb(); }
+  else if (e.key==='ArrowRight') step(1);
+  else if (e.key==='ArrowLeft') step(-1);
+  else if (e.key==='f'||e.key==='F'||e.key==='а'||e.key==='А') toggleFav(currentList[lbIdx].id);
+});
+let tx=null, ty=null;
+lbSc.addEventListener('touchstart', e=>{ if(lb.classList.contains('zoom')) return; tx=e.touches[0].clientX; ty=e.touches[0].clientY; },{passive:true});
+lbSc.addEventListener('touchend', e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty; if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)) step(dx<0?1:-1); tx=null; });
+
+window.addEventListener('hashchange', ()=>{ if(lb.classList.contains('open')) closeLb(); render(); window.scrollTo(0,0); });
+updateFavCount();
+render();
+</script>
+</body>
+</html>
