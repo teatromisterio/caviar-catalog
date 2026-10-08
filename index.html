@@ -360,12 +360,15 @@ const COLLECTIONS = [
    models:['Кремовая стёжка','Карбон и красный','Гравированный изгиб','Замша с прострочкой','Синий аллигатор','Крокодил и сетка','Бордовая стёжка','Чёрный крокодил','Ночной крокодил']},
   {slug:'orient', code:'ORI', title:'Восток', folder:'orient', isNew:true,
    desc:'Арабеска, гирих и силуэты минаретов. Изникская эмаль, перламутр и золотой рельеф — от арок Альгамбры до огней Дубая, от песчаных дюн до парусов доу.',
-   models:['Изумрудная звезда','Изумрудная звезда II','Серебряная арабеска','Звезда Альгамбры','Арка Кордовы','Мескита','Бурдж-Халифа','Михраб','Золотые дюны','Мечеть в дюнах','Пустынный мираж','Перламутровая мечеть','Сапфировый гирих','Чёрные арки','Изникский тюльпан','Персидский ковёр','Доу','Сокол','Бедуинский узор','Павлин','Гранатовая розетка']}
+   models:['Изумрудная звезда','Изумрудная звезда II','Серебряная арабеска','Звезда Альгамбры','Арка Кордовы','Мескита','Бурдж-Халифа','Михраб','Золотые дюны','Мечеть в дюнах','Пустынный мираж','Перламутровая мечеть','Сапфировый гирих','Чёрные арки','Изникский тюльпан','Персидский ковёр','Доу','Сокол','Бедуинский узор','Павлин','Гранатовая розетка']},
+  {slug:'india', code:'IND', title:'Махараджа', folder:'india', isNew:true,
+   desc:'Храмовый рельеф, кундан и эмаль минакари. Ганеша, Шива и священный Ом в золотых арках, усыпанных рубинами и изумрудами, — коллекция в духе индийских дворцов.',
+   models:['Ом','Натараджа','Шива и Ганеша','Лик Ганеши','Ом II','Тришула','Нанди','Ганеша на лотосе','Рубиновая мандала','Шива на Кайласе','Священный Ганг','Изумрудный Ганеша','Шафрановый Ганеша','Ганеша в храме','Ганеша-мандала']}
 ];
 /* порядок коллекций на главной (ID от порядка не зависят) */
-const ORDER = ['gold','orient','art-deco','vitrage','tropics','geometry','garden','gran-turismo','waves','cameo','stars','meteorite','dial','solo'];
+const ORDER = ['gold','orient','india','art-deco','vitrage','tropics','geometry','garden','gran-turismo','waves','cameo','stars','meteorite','dial','solo'];
 /* папки ассетов (латиница для GitHub Pages) */
-const ASSET_DIR = {'gold':'gold','woman':'woman','zodiac 1':'zodiac-1','zodiac 2':'zodiac-2','zodiac 3':'zodiac-3','zodiac black':'zodiac-black','zodiac man':'zodiac-man','другое':'other','art deco':'art-deco','vitrage':'vitrage','tropics':'tropics','geometry':'geometry','gran turismo':'gran-turismo','orient':'orient'};
+const ASSET_DIR = {'gold':'gold','woman':'woman','zodiac 1':'zodiac-1','zodiac 2':'zodiac-2','zodiac 3':'zodiac-3','zodiac black':'zodiac-black','zodiac man':'zodiac-man','другое':'other','art deco':'art-deco','vitrage':'vitrage','tropics':'tropics','geometry':'geometry','gran turismo':'gran-turismo','orient':'orient','india':'india'};
 
 const pad = n => String(n).padStart(2,'0');
 const MODELS = [];
