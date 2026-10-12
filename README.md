@@ -40,11 +40,20 @@ ID модели = `КОД-номер`, например `KAM-07`. Номер с�
 |---|---|---|---|
 | ZF-KLS | Мужская классика | fold/classic | 7 |
 | ZF-PAR | Парижский шик | fold/paris | 5 |
-| ZF-ORI | Восток | fold/orient | 4 |
-| ZF-GEO | Геометрия | fold/geometry | 3 |
-| ZF-GTR | Гран-туризмо | fold/gran-turismo | 5 |
+| ZF-ORI | Восток | fold/orient | 8 |
+| ZF-GEO | Геометрия | fold/geometry | 7 |
+| ZF-GTR | Гран-туризмо | fold/gran-turismo | 9 |
 | ZF-SAD | Сад | fold/garden | 7 |
 | ZF-GOR | Города | fold/cities | 1 |
+| ZF-ZOL | Сокровищница | fold/treasury | 4 |
+| ZF-EMA | Сад эмалей | fold/enamel | 4 |
+| ZF-SOL | Вне серий | fold/solo | 4 |
+| ZF-DEC | Ар-деко | fold/art-deco | 4 |
+| ZF-VIT | Витраж | fold/vitrage | 4 |
+| ZF-TRO | Тропики | fold/tropics | 4 |
+| ZF-IND | Махараджа | fold/india | 4 |
+
+Серия 13.10.2026: по 4 модели на каждую не-зодиакальную коллекцию Duo, без короны; каждая генерация проверена по правилам (геометрия камер, рамка, лейбл, материалы, камни); исходники — «Z Fold8 Ultra/Генерации/Серия/<код>/».
 
 Источник — папка «Z Fold8 Ultra/Генерации/Утверждённые» (соответствие в `sources.json`, ключ `fold/<папка>/NN`).
 Новую модель Fold добавлять так же, как для Duo: файлы `NN.webp` (2000px по длинной стороне) и `NN-t.webp` (800px) в папку коллекции + имя в конец `models`. Новое устройство — объект в `DEVICES`, коллекции с `device:'<ключ>'` и маршрут в `route()`.
