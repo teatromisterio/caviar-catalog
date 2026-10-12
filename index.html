@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Каталог коллекций iPhone Duo</title>
-<meta name="description" content="Каталог концептов кастомного iPhone Duo: коллекции, модели, избранное.">
+<title>Каталог коллекций Caviar</title>
+<meta name="description" content="Каталог концептов Caviar: iPhone Duo и Samsung Galaxy Z Fold8 Ultra — коллекции, модели, избранное.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
@@ -38,6 +38,14 @@ a{color:inherit;text-decoration:none}
 .fav-btn .cnt{min-width:20px;height:20px;border-radius:10px;background:var(--gold);color:var(--black);font-size:11px;line-height:20px;text-align:center;padding:0 6px;font-weight:800;letter-spacing:0}
 .fav-btn .cnt:empty{display:none}
 .fav-btn.on{color:var(--white)}
+
+/* ---------- переключатель устройств ---------- */
+.devbar{background:var(--black);border-top:1px solid rgba(255,255,255,.08);display:flex;gap:6px;padding:10px var(--s2);overflow-x:auto;scrollbar-width:none}
+.devbar::-webkit-scrollbar{display:none}
+.devbar a{flex:none;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border-radius:18px;border:1px solid rgba(255,255,255,.2);color:#cfcbc4;transition:all .2s;white-space:nowrap}
+.devbar a:hover{border-color:var(--gold);color:var(--white)}
+.devbar a.on{background:var(--gold);border-color:var(--gold);color:var(--black)}
+.devbar a .k{opacity:.7;margin-left:6px;font-weight:700}
 
 /* ---------- hero ---------- */
 .hero{background:var(--black);color:var(--white);padding:var(--s1) var(--s2) calc(var(--s1) + 8px)}
@@ -267,10 +275,10 @@ footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;t
 <body>
 
 <header class="hdr">
-  <a class="logo" href="#/" aria-label="На главную">Caviar <small>iPhone Duo · Каталог</small></a>
+  <a class="logo" href="#/" id="logo" aria-label="На главную">Caviar <small id="logoDev">iPhone Duo · Каталог</small></a>
   <nav class="nav" aria-label="Основное меню">
-    <a href="#/" data-nav="home">Коллекции</a>
-    <a href="#/all" data-nav="all"><span class="lbl">Все&nbsp;</span>модели</a>
+    <a href="#/" data-nav="home" id="navHome">Коллекции</a>
+    <a href="#/all" data-nav="all" id="navAll"><span class="lbl">Все&nbsp;</span>модели</a>
     <a href="#/packs" data-nav="packs" class="fav-btn" aria-label="Мои паки">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></svg>
       <span class="pk-lbl">Паки</span><span class="cnt" id="packCount"></span>
@@ -281,10 +289,11 @@ footer{padding:var(--s2);text-align:center;font-size:12px;letter-spacing:.16em;t
     </a>
   </nav>
 </header>
+<nav class="devbar" id="devbar" aria-label="Устройство"></nav>
 
 <div id="app" aria-live="polite"></div>
 
-<footer>Caviar · Концепты iPhone Duo · Внутренний каталог</footer>
+<footer>Caviar · Концепты iPhone Duo и Galaxy Z Fold8 Ultra · Внутренний каталог</footer>
 
 <!-- Lightbox -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр модели">
@@ -363,17 +372,47 @@ const COLLECTIONS = [
    models:['Изумрудная звезда','Изумрудная звезда II','Серебряная арабеска','Звезда Альгамбры','Арка Кордовы','Мескита','Бурдж-Халифа','Михраб','Золотые дюны','Мечеть в дюнах','Пустынный мираж','Перламутровая мечеть','Сапфировый гирих','Чёрные арки','Изникский тюльпан','Персидский ковёр','Доу','Сокол','Бедуинский узор','Павлин','Гранатовая розетка']},
   {slug:'india', code:'IND', title:'Махараджа', folder:'india', isNew:true,
    desc:'Храмовый рельеф, кундан и эмаль минакари. Ганеша, Шива и священный Ом в золотых арках, усыпанных рубинами и изумрудами, — коллекция в духе индийских дворцов.',
-   models:['Ом','Натараджа','Шива и Ганеша','Лик Ганеши','Ом II','Тришула','Нанди','Ганеша на лотосе','Рубиновая мандала','Шива на Кайласе','Священный Ганг','Изумрудный Ганеша','Шафрановый Ганеша','Ганеша в храме','Ганеша-мандала']}
+   models:['Ом','Натараджа','Шива и Ганеша','Лик Ганеши','Ом II','Тришула','Нанди','Ганеша на лотосе','Рубиновая мандала','Шива на Кайласе','Священный Ганг','Изумрудный Ганеша','Шафрановый Ганеша','Ганеша в храме','Ганеша-мандала']},
+  /* ==== Samsung Galaxy Z Fold8 Ultra (раздел fold, ID с префиксом ZF-) ==== */
+  {slug:'zf-classic', code:'ZF-KLS', title:'Мужская классика', folder:'fold/classic', device:'fold',
+   desc:'Чёрный титан, золото и кожа крокодила. Строгие шевроны в духе Vertu, метеорит, фрезеровка и гильош — характер, собранный без лишних слов.',
+   models:['Сенатор','Нуар. Шеврон','Нуар. Метеорит','Нуар. Метеорит II','Нуар. Грани','Нуар. Грани II','Стелс']},
+  {slug:'zf-gran-turismo', code:'ZF-GTR', title:'Гран-туризмо', folder:'fold/gran-turismo', device:'fold',
+   desc:'Рифлёная сталь гоночных полос, кованый карбон и седельная кожа. Медальон с гильошем «солнечные лучи» — как крышка бензобака спортивного купе.',
+   models:['Гран-туризмо','Диагональ','Диагональ. Медальон','Диагональ. Золото и бордо','Диагональ. Золотой медальон']},
+  {slug:'zf-paris', code:'ZF-PAR', title:'Парижский шик', folder:'fold/paris', device:'fold',
+   desc:'Ар-деко и эстетика французских ателье: гильош «pointes de diamant», лучи и ступенчатые шевроны, калиброванные рубины, золото, палладий и крокодил.',
+   models:['Рубин. Ореол','Рубин. Дорожка',"Лак д'Ор. Золото","Лак д'Ор. Ночь",'Линия Палладий']},
+  {slug:'zf-garden', code:'ZF-SAD', title:'Сад', folder:'fold/garden', device:'fold',
+   desc:'Цельная кожа, тонкая эмаль и розовое золото. Веера гинкго, ажурные листья пальм и солнечный глаз — женская коллекция с лёгким дыханием.',
+   models:['Грация','Грация. Эмаль','Грация. Крокодил','Грация. Питон','Гинкго','Солей','Пальмерай']},
+  {slug:'zf-geometry', code:'ZF-GEO', title:'Геометрия', folder:'fold/geometry', device:'fold',
+   desc:'Перламутровые кубы, малахитовый клевер и лазуритовая мозаика в строгой золотой сетке под гравированной арабеской.',
+   models:['Золотые кубы','Малахитовый клевер','Лазуритовая мозаика']},
+  {slug:'zf-orient', code:'ZF-ORI', title:'Восток', folder:'fold/orient', device:'fold',
+   desc:'Императорский дракон в золотом барельефе, перегородчатая эмаль и могольская решётка джали с минакари — от Запретного города до дворцов Раджастхана.',
+   models:['Императорский дракон','Императорский дракон II','Эмалевый дракон','Махараджа']},
+  {slug:'zf-cities', code:'ZF-GOR', title:'Города', folder:'fold/cities', device:'fold',
+   desc:'Сюжетная мозаика из перегородчатой эмали: тонкие золотые перекладины и сотни ячеек, каждая залита своим цветом.',
+   models:['Ночная Москва']}
 ];
 /* порядок коллекций на главной (ID от порядка не зависят) */
-const ORDER = ['gold','orient','india','art-deco','vitrage','tropics','geometry','garden','gran-turismo','waves','cameo','stars','meteorite','dial','solo'];
+const ORDER = ['gold','orient','india','art-deco','vitrage','tropics','geometry','garden','gran-turismo','waves','cameo','stars','meteorite','dial','solo',
+  'zf-classic','zf-paris','zf-orient','zf-geometry','zf-gran-turismo','zf-garden','zf-cities'];
 /* папки ассетов (латиница для GitHub Pages) */
-const ASSET_DIR = {'gold':'gold','woman':'woman','zodiac 1':'zodiac-1','zodiac 2':'zodiac-2','zodiac 3':'zodiac-3','zodiac black':'zodiac-black','zodiac man':'zodiac-man','другое':'other','art deco':'art-deco','vitrage':'vitrage','tropics':'tropics','geometry':'geometry','gran turismo':'gran-turismo','orient':'orient','india':'india'};
+const ASSET_DIR = {'gold':'gold','woman':'woman','zodiac 1':'zodiac-1','zodiac 2':'zodiac-2','zodiac 3':'zodiac-3','zodiac black':'zodiac-black','zodiac man':'zodiac-man','другое':'other','art deco':'art-deco','vitrage':'vitrage','tropics':'tropics','geometry':'geometry','gran turismo':'gran-turismo','orient':'orient','india':'india',
+  'fold/classic':'fold/classic','fold/gran-turismo':'fold/gran-turismo','fold/paris':'fold/paris','fold/garden':'fold/garden','fold/geometry':'fold/geometry','fold/orient':'fold/orient','fold/cities':'fold/cities'};
+/* устройства: у каждого своя главная и свой сплошной каталог; избранное и паки общие */
+const DEVICES = {
+  duo:  {key:'duo',  title:'iPhone Duo',            short:'iPhone Duo',      home:'#/',     all:'#/all',      eyebrow:'Caviar · iPhone Duo'},
+  fold: {key:'fold', title:'Galaxy Z Fold8 Ultra',  short:'Z Fold8 Ultra',   pre:'Galaxy ',   home:'#/fold', all:'#/fold/all', eyebrow:'Caviar · Samsung Galaxy Z Fold8 Ultra'}
+};
 
 const pad = n => String(n).padStart(2,'0');
 const MODELS = [];
 COLLECTIONS.sort((a,b)=>ORDER.indexOf(a.slug)-ORDER.indexOf(b.slug));
 COLLECTIONS.forEach(c => {
+  c.device = c.device || 'duo';
   c.dir = 'assets/' + ASSET_DIR[c.folder];
   c.cover = c.dir + '/cover.webp';
   c.items = c.models.map((name,i) => {
@@ -383,6 +422,9 @@ COLLECTIONS.forEach(c => {
   });
 });
 const BY_ID = Object.fromEntries(MODELS.map(m=>[m.id,m]));
+const colsOf = d => COLLECTIONS.filter(c=>c.device===d);
+const modelsOf = d => MODELS.filter(m=>m.col.device===d);
+let curDev = 'duo';
 
 /* ---------- избранное (localStorage) ---------- */
 const FKEY = 'caviar-duo-favorites';
@@ -489,7 +531,7 @@ async function copyText(t){
   try { await navigator.clipboard.writeText(t); return true; }
   catch(e){ const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); let ok=false; try{ok=document.execCommand('copy')}catch(_){} ta.remove(); return ok; }
 }
-const line = m => `${m.id} — ${m.name} — коллекция «${m.col.title}», модель №${m.num}`;
+const line = m => `${m.id} — ${m.name} — коллекция «${m.col.title}»${m.col.device==='fold'?' (Galaxy Z Fold8 Ultra)':''}, модель №${m.num}`;
 const HEART = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z" stroke-linejoin="round"/></svg>';
 const PKICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5"/><path d="M3 16.5L12 21l9-4.5"/></svg>';
 const ARROW = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
@@ -497,12 +539,14 @@ const ARROW = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" strok
 /* ---------- роутинг (hash — работает на GitHub Pages) ---------- */
 function route(){
   const h = location.hash.replace(/^#\/?/,'').split('/');
-  if (h[0]==='c' && COLLECTIONS.find(c=>c.slug===h[1])) return {view:'col', slug:h[1]};
-  if (h[0]==='all') return {view:'all', filter:h[1]||''};
+  if (h[0]==='c' && COLLECTIONS.find(c=>c.slug===h[1])) return {view:'col', slug:h[1], dev:COLLECTIONS.find(c=>c.slug===h[1]).device};
+  if (h[0]==='fold' && h[1]==='all') return {view:'all', dev:'fold', filter:h[2]||''};
+  if (h[0]==='fold') return {view:'home', dev:'fold'};
+  if (h[0]==='all') return {view:'all', dev:'duo', filter:h[1]||''};
   if (h[0]==='favorites') return {view:'fav'};
   if (h[0]==='packs') return {view:'packs'};
   if (h[0]==='pack' && packById(decodeURIComponent(h[1]||''))) return {view:'pack', id:decodeURIComponent(h[1])};
-  return {view:'home'};
+  return {view:'home', dev:'duo'};
 }
 let currentList = [];
 
@@ -521,17 +565,18 @@ function tile(m, showCol){
   </article>`;
 }
 
-function viewHome(){
+function viewHome(dev){
+  const D = DEVICES[dev], CS = colsOf(dev), MS = modelsOf(dev);
   return `<section class="hero">
-    <div class="eyebrow">Caviar · iPhone Duo</div>
+    <div class="eyebrow">${D.eyebrow}</div>
     <h1>Коллекции концептов</h1>
     <p>Выберите коллекцию, чтобы рассмотреть модели. Сердечко отправляет модель в избранное, а кнопка-стопка — в один из ваших паков: собирайте до трёх подборок одновременно и копируйте их идентификаторы одним нажатием.</p>
     <div class="meta">
-      <div class="stat"><b>${COLLECTIONS.length}</b><span>коллекций</span></div>
-      <div class="stat"><b>${MODELS.length}</b><span>моделей</span></div>
+      <div class="stat"><b>${CS.length}</b><span>${plural(CS.length,'коллекция','коллекции','коллекций').replace(/^\d+ /,'')}</span></div>
+      <div class="stat"><b>${MS.length}</b><span>${plural(MS.length,'модель','модели','моделей').replace(/^\d+ /,'')}</span></div>
     </div>
     <div class="actions">
-      <a class="btn btn-gold" href="#/all">Смотреть все модели ${ARROW}</a>
+      <a class="btn btn-gold" href="${D.all}">Смотреть все модели ${ARROW}</a>
       <a class="btn btn-ghost" href="#/packs">Мои паки</a>
       <a class="btn btn-ghost" href="#/favorites">Избранное</a>
     </div>
@@ -539,7 +584,7 @@ function viewHome(){
   <main>
     <div class="sec-head"><div><h2>Коллекции</h2><div class="sub">Нажмите на обложку, чтобы открыть каталог коллекции</div></div></div>
     <div class="cols">
-      ${COLLECTIONS.map(c=>`<a class="col-card rv" href="#/c/${c.slug}" aria-label="Коллекция ${esc(c.title)}">
+      ${CS.map(c=>`<a class="col-card rv" href="#/c/${c.slug}" aria-label="Коллекция ${esc(c.title)}">
         <img src="${c.cover}" alt="Обложка коллекции «${esc(c.title)}»" loading="lazy" decoding="async">
         ${c.isNew?'<span class="new">Новая</span>':''}
         <div class="cap"><div class="code">${c.code}</div><h3>${esc(c.title)}</h3><div class="n">${plural(c.items.length,'модель','модели','моделей')}</div>
@@ -552,36 +597,38 @@ function viewHome(){
 function viewCol(slug){
   const c = COLLECTIONS.find(x=>x.slug===slug);
   currentList = c.items;
-  const idx = COLLECTIONS.indexOf(c), next = COLLECTIONS[(idx+1)%COLLECTIONS.length];
+  const D = DEVICES[c.device], CS = colsOf(c.device);
+  const idx = CS.indexOf(c), next = CS[(idx+1)%CS.length];
   return `<section class="c-hero">
     <div class="txt">
-      <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>${esc(c.title)}</span></div>
+      <div class="crumbs"><a href="${D.home}">${D.short}</a><span>/</span><span>${esc(c.title)}</span></div>
       <div class="code">Коллекция · ${c.code}</div>
       <h1>${esc(c.title)}</h1>
       <p>${esc(c.desc)}</p>
       <div class="actions">
-        <a class="btn btn-gold" href="#/all">Посмотреть все модели ${ARROW}</a>
-        <a class="btn btn-ghost" href="#/c/${next.slug}">Далее: ${esc(next.title)}</a>
+        <a class="btn btn-gold" href="${D.all}">Посмотреть все модели ${ARROW}</a>
+        ${CS.length>1?`<a class="btn btn-ghost" href="#/c/${next.slug}">Далее: ${esc(next.title)}</a>`:''}
       </div>
     </div>
     <div class="img"><img src="${c.cover}" alt="Обложка коллекции «${esc(c.title)}»"></div>
   </section>
   <main>
     <div class="sec-head"><div><h2>Модели</h2><div class="sub">${plural(c.items.length,'модель','модели','моделей')} · ID ${c.code}-01 — ${c.code}-${pad(c.items.length)}</div></div>
-    <a class="btn btn-line" href="#/all/${c.slug}">Все модели каталога</a></div>
+    <a class="btn btn-line" href="${D.all}/${c.slug}">Все модели каталога</a></div>
     <div class="grid">${c.items.map(m=>tile(m,false)).join('')}</div>
   </main>`;
 }
 
-function viewAll(filter){
-  const list = filter ? MODELS.filter(m=>m.col.slug===filter) : MODELS;
+function viewAll(dev, filter){
+  const D = DEVICES[dev], CS = colsOf(dev), MS = modelsOf(dev);
+  const list = filter ? MS.filter(m=>m.col.slug===filter) : MS;
   currentList = list;
   return `<main>
-    <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>Все модели</span></div>
-    <div class="sec-head"><div><h2>Все модели</h2><div class="sub">Сплошной каталог: ${plural(MODELS.length,'модель','модели','моделей')} из ${COLLECTIONS.length} коллекций</div></div></div>
+    <div class="crumbs"><a href="${D.home}">${D.short}</a><span>/</span><span>Все модели</span></div>
+    <div class="sec-head"><div><h2>Все модели</h2><div class="sub">${D.title} · сплошной каталог: ${plural(MS.length,'модель','модели','моделей')} из ${plural(CS.length,'коллекции','коллекций','коллекций')}</div></div></div>
     <div class="toolbar" role="toolbar" aria-label="Фильтр по коллекции">
-      <a class="chip ${!filter?'on':''}" href="#/all" style="display:inline-flex;align-items:center">Все<span class="k">${MODELS.length}</span></a>
-      ${COLLECTIONS.map(c=>`<a class="chip ${filter===c.slug?'on':''}" href="#/all/${c.slug}" style="display:inline-flex;align-items:center">${esc(c.title)}<span class="k">${c.items.length}</span></a>`).join('')}
+      <a class="chip ${!filter?'on':''}" href="${D.all}" style="display:inline-flex;align-items:center">Все<span class="k">${MS.length}</span></a>
+      ${CS.map(c=>`<a class="chip ${filter===c.slug?'on':''}" href="${D.all}/${c.slug}" style="display:inline-flex;align-items:center">${esc(c.title)}<span class="k">${c.items.length}</span></a>`).join('')}
       <input class="search" id="q" type="search" placeholder="Поиск по названию или ID" aria-label="Поиск">
     </div>
     <div class="grid" id="allGrid">${list.map(m=>tile(m,true)).join('')}</div>
@@ -591,11 +638,11 @@ function viewAll(filter){
 function viewFav(){
   const list = favs.map(id=>BY_ID[id]);
   currentList = list;
-  if (!list.length) return `<main><div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>Избранное</span></div>
+  if (!list.length) return `<main><div class="crumbs"><a href="${DEVICES[curDev].home}">${DEVICES[curDev].short}</a><span>/</span><span>Избранное</span></div>
     <div class="empty">${HEART}<h3>Избранное пусто</h3><p>Нажмите на сердечко на карточке модели, и она появится здесь.</p>
-    <a class="btn btn-dark" href="#/all">Смотреть все модели</a></div></main>`;
+    <a class="btn btn-dark" href="${DEVICES[curDev].all}">Смотреть все модели</a></div></main>`;
   return `<main>
-    <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>Избранное</span></div>
+    <div class="crumbs"><a href="${DEVICES[curDev].home}">${DEVICES[curDev].short}</a><span>/</span><span>Избранное</span></div>
     <div class="sec-head"><div><h2>Избранное</h2><div class="sub">${plural(list.length,'модель','модели','моделей')} · список сохраняется в этом браузере</div></div></div>
     <div class="fav-panel">
       <pre id="favText">${esc(list.map(line).join('\n'))}</pre>
@@ -613,7 +660,7 @@ function viewPacks(){
   currentList = [];
   const slots = [0,1,2].map(i=>packs[i]);
   return `<main>
-    <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><span>Мои паки</span></div>
+    <div class="crumbs"><a href="${DEVICES[curDev].home}">${DEVICES[curDev].short}</a><span>/</span><span>Мои паки</span></div>
     <div class="sec-head"><div><h2>Мои паки</h2><div class="sub">Собирайте из моделей свои коллекции — до ${MAXP} паков одновременно. Модель добавляется кнопкой-стопкой на карточке или в полноэкранном просмотре и может входить в несколько паков. Паки хранятся в этом браузере.</div></div></div>
     <div class="packs">${slots.map((p,i)=> p ? `<section class="pslot rv">
         <div class="bar" style="background:${pcolor(p)}"></div>
@@ -641,7 +688,7 @@ function viewPack(id){
   const p = packById(id), list = p.items.map(x=>BY_ID[x]);
   currentList = list;
   return `<main>
-    <div class="crumbs"><a href="#/">Коллекции</a><span>/</span><a href="#/packs">Мои паки</a><span>/</span><span>${esc(p.name)}</span></div>
+    <div class="crumbs"><a href="${DEVICES[curDev].home}">${DEVICES[curDev].short}</a><span>/</span><a href="#/packs">Мои паки</a><span>/</span><span>${esc(p.name)}</span></div>
     <div class="sec-head"><div><div class="slot" style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:${pcolor(p)};margin-bottom:8px">● Пак ${packs.indexOf(p)+1} из ${MAXP}</div><h2>${esc(p.name)}</h2><div class="sub">${plural(list.length,'модель','модели','моделей')}</div></div></div>
     <div class="fav-panel">
       ${list.length ? `<pre>${esc(packText(p))}</pre>` : `<pre>Пак пока пуст. Добавляйте модели кнопкой-стопкой на карточках.</pre>`}
@@ -652,7 +699,7 @@ function viewPack(id){
         <div style="display:flex;gap:8px"><button class="btn btn-line" style="flex:1" data-pclear="${p.id}" ${list.length?'':'disabled'}>Очистить</button><button class="btn btn-line" style="flex:1" data-pdel="${p.id}">Удалить</button></div>
       </div>
     </div>
-    ${list.length ? `<div class="grid">${list.map(m=>tile(m,true)).join('')}</div>` : `<div class="empty"><a class="btn btn-dark" href="#/all">Смотреть все модели</a></div>`}
+    ${list.length ? `<div class="grid">${list.map(m=>tile(m,true)).join('')}</div>` : `<div class="empty"><a class="btn btn-dark" href="${DEVICES[curDev].all}">Смотреть все модели</a></div>`}
   </main>`;
 }
 
@@ -660,11 +707,19 @@ function viewPack(id){
 let io;
 function render(){
   const r = route();
+  if (r.dev) curDev = r.dev;
+  const D = DEVICES[curDev];
+  document.getElementById('logo').setAttribute('href', D.home);
+  document.getElementById('logoDev').textContent = D.short + ' · Каталог';
+  document.getElementById('navHome').setAttribute('href', D.home);
+  document.getElementById('navAll').setAttribute('href', D.all);
+  document.getElementById('devbar').innerHTML = Object.values(DEVICES).map(d=>`<a href="${d.home}" class="${d.key===curDev?'on':''}" ${d.key===curDev?'aria-current="page"':''}>${d.pre?`<span class="xl">${d.pre}</span>`:''}${d.short}<span class="k">${modelsOf(d.key).length}</span></a>`).join('');
   document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',
     (r.view==='home'&&a.dataset.nav==='home')||(r.view==='col'&&a.dataset.nav==='home')||(r.view==='all'&&a.dataset.nav==='all')||(r.view==='fav'&&a.dataset.nav==='fav')||((r.view==='packs'||r.view==='pack')&&a.dataset.nav==='packs')));
-  $app.innerHTML = r.view==='col' ? viewCol(r.slug) : r.view==='all' ? viewAll(r.filter) : r.view==='fav' ? viewFav() : r.view==='packs' ? viewPacks() : r.view==='pack' ? viewPack(r.id) : viewHome();
+  $app.innerHTML = r.view==='col' ? viewCol(r.slug) : r.view==='all' ? viewAll(r.dev, r.filter) : r.view==='fav' ? viewFav() : r.view==='packs' ? viewPacks() : r.view==='pack' ? viewPack(r.id) : viewHome(r.dev);
   const c = r.view==='col' ? COLLECTIONS.find(x=>x.slug===r.slug) : null;
-  document.title = c ? `${c.title} — каталог iPhone Duo` : r.view==='all' ? 'Все модели — каталог iPhone Duo' : r.view==='fav' ? 'Избранное — каталог iPhone Duo' : r.view==='packs' ? 'Мои паки — каталог iPhone Duo' : r.view==='pack' ? `Пак «${packById(r.id).name}» — каталог iPhone Duo` : 'Каталог коллекций iPhone Duo';
+  const dt = D.title;
+  document.title = c ? `${c.title} — каталог ${dt}` : r.view==='all' ? `Все модели — каталог ${dt}` : r.view==='fav' ? 'Избранное — каталог Caviar' : r.view==='packs' ? 'Мои паки — каталог Caviar' : r.view==='pack' ? `Пак «${packById(r.id).name}» — каталог Caviar` : `Каталог коллекций ${dt}`;
   hydrate();
   if (r.view==='all') bindSearch();
 }
