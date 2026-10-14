@@ -415,15 +415,18 @@ const COLLECTIONS = [
    models:['Лотос-мандала','Королевский слон','Розовый Джайпур','Изумрудный кундан',"Лотос-мандала — вариант 2","Королевский слон — вариант 2","Розовый Джайпур — вариант 2","Изумрудный кундан — вариант 2"]},
   {slug:'zf-cities', code:'ZF-GOR', title:'Города', folder:'fold/cities', device:'fold',
    desc:'Сюжетная мозаика из перегородчатой эмали: тонкие золотые перекладины и сотни ячеек, каждая залита своим цветом.',
-   models:['Ночная Москва']}
+   models:['Ночная Москва']},
+  {slug:'gerb-black', code:'GRB', title:'Чёрный герб', folder:'gerb black', isNew:true,
+   desc:'Чёрный титан, кожа крокодила и телёнка, кованый карбон. Герб России в чёрном барельефе — строгая сила без единого золотого блика.',
+   models:['Обсидиан','Монолит','Карбон','Канцлер','Печать','Вертикаль','Шеврон','Доспех','Генштаб']}
 ];
 /* порядок коллекций на главной (ID от порядка не зависят) */
-const ORDER = ['gold','orient','india','art-deco','vitrage','tropics','geometry','garden','gran-turismo','waves','cameo','stars','meteorite','dial','solo',
+const ORDER = ['gold','gerb-black','orient','india','art-deco','vitrage','tropics','geometry','garden','gran-turismo','waves','cameo','stars','meteorite','dial','solo',
   'zf-treasury','zf-classic','zf-paris','zf-orient','zf-india','zf-art-deco','zf-vitrage','zf-tropics','zf-geometry','zf-enamel','zf-garden','zf-gran-turismo','zf-solo','zf-cities'];
 /* папки ассетов (латиница для GitHub Pages) */
 const ASSET_DIR = {'gold':'gold','woman':'woman','zodiac 1':'zodiac-1','zodiac 2':'zodiac-2','zodiac 3':'zodiac-3','zodiac black':'zodiac-black','zodiac man':'zodiac-man','другое':'other','art deco':'art-deco','vitrage':'vitrage','tropics':'tropics','geometry':'geometry','gran turismo':'gran-turismo','orient':'orient','india':'india',
   'fold/classic':'fold/classic','fold/gran-turismo':'fold/gran-turismo','fold/paris':'fold/paris','fold/garden':'fold/garden','fold/geometry':'fold/geometry','fold/orient':'fold/orient','fold/cities':'fold/cities',
-  'fold/treasury':'fold/treasury','fold/enamel':'fold/enamel','fold/solo':'fold/solo','fold/art-deco':'fold/art-deco','fold/vitrage':'fold/vitrage','fold/tropics':'fold/tropics','fold/india':'fold/india'};
+  'fold/treasury':'fold/treasury','fold/enamel':'fold/enamel','fold/solo':'fold/solo','fold/art-deco':'fold/art-deco','fold/vitrage':'fold/vitrage','fold/tropics':'fold/tropics','fold/india':'fold/india','gerb black':'gerb-black'};
 /* устройства: у каждого своя главная и свой сплошной каталог; избранное и паки общие */
 const DEVICES = {
   duo:  {key:'duo',  title:'iPhone Duo',            short:'iPhone Duo',      home:'#/',     all:'#/all',      eyebrow:'Caviar · iPhone Duo'},
